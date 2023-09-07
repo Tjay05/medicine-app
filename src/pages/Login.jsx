@@ -5,7 +5,7 @@ import logo from '../assets/icons/logo.svg'
 const Login = () => {
   return ( 
     <>
-      <main>
+      <main className='loginMain'>
         <aside>
           <img src={medCare} alt="Effortless" />
           <p>Effortlessly manage medicine inventory - track, organize, and stay informed</p>
@@ -19,7 +19,7 @@ const Login = () => {
             <h1>Log in</h1>
             <p>Please input your credentials to continue using this app</p>
             <form>
-              <input type="text" />
+              <input placeholder='ID No.' type="text" />
               <button type='submit'>Continue</button>
             </form>
           </div>
