@@ -1,0 +1,32 @@
+// Picture Imports
+import medCare from '../assets/images/undraw_medical_care_movn.png'
+import logo from '../assets/icons/logo.svg'
+
+const Login = () => {
+  return ( 
+    <>
+      <main>
+        <aside>
+          <img src={medCare} alt="Effortless" />
+          <p>Effortlessly manage medicine inventory - track, organize, and stay informed</p>
+        </aside>
+        <section>
+          <nav>
+            <img src={logo} alt="Logo" />
+            <p>Medicine App</p>
+          </nav>
+          <div className="loginBody">
+            <h1>Log in</h1>
+            <p>Please input your credentials to continue using this app</p>
+            <form>
+              <input type="text" />
+              <button type='submit'>Continue</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </>
+   );
+}
+ 
+export default Login;

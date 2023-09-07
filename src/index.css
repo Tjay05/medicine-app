@@ -1,0 +1,59 @@
+/* Root Styles */
+:root {
+  /* Primary Colors */
+  --login-navy-blue: hsla(210, 100%, 20%, 1);
+  --font-dark-blue: hsla(207, 43%, 16%, 1);
+  --active-lite-blue: hsla(200, 100%, 70%, 1);
+  --search-placeholder: hsla(248, 92%, 37%, 0.5);
+  --orange-no: hsla(0, 100%, 50%, 1);
+
+  /* Neutral Colors */
+  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --light-ash-bg-search: hsla(0, 0%, 95%, 1);
+}
+
+/* Reset Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+/* Utility Styles */
+.container {
+  width: 90%;
+  margin-inline: auto;
+  min-width: 926px;
+}
+
+/* Desktop Styles */
