@@ -212,6 +212,59 @@ aside.nav nav ul li a img {
 
 /* Main Section Content */
 main.navbarContent section.content {
-  width: 67%;
+  width: 77%;
+}
+
+/* Dashboard */
+section.content header {
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  padding-block-start: 3rem;
+  border-bottom: .1px solid var(--light-ash-bg-search);
+  box-shadow:  0px 0px 10px 1px rgba(0,0,0,0.1);
+}
+
+section.content header .headerWrap {
+  width: 92%;
   margin-inline: auto;
+}
+
+section.content header .headerWrap nav.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1rem;
+  font-size: 1.4rem;
+  font-family: var(--open-sans);
+  font-weight: 600;
+  color: var(--black);
+}
+
+section.content header .headerWrap .bottomHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 1rem;
+}
+
+header .headerWrap .bottomHeader .searchForm {
+  display: flex;
+  align-items: center;
+}
+
+header .headerWrap .bottomHeader .searchForm input {
+  font-family: var(--roboto);
+  font-weight: 400;
+  border: none;
+  border-radius: 8px;
+  padding-inline: 1rem;
+  width: 450px;
+  padding-block: .6rem ;
+  background-color: var(--light-ash-bg-search);
+  color: var(--search-placeholder);
+}
+
+header .headerWrap .bottomHeader .searchForm input::placeholder {
+  color: var(--search-placeholder);
 }

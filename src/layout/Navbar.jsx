@@ -4,6 +4,7 @@ import dashIcon from '../assets/icons/dashboard.svg';
 import humanMed from '../assets/icons/hmuanMeds.svg';
 import reciept from '../assets/icons/reciept.svg';
 import employee from '../assets/icons/employees.svg';
+import { Outlet, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return ( 
@@ -16,30 +17,32 @@ const Navbar = () => {
                 <img src={logo} alt="Logo" />
                 <p>Medicine App</p>
               </a></li>
-              <li><a>
+              <li><NavLink to='/Home'>
                 <img src={dashIcon} alt="Dashboard" />
                 <p>Dashboard</p>
-              </a></li>
-              <li><a>
+              </NavLink></li>
+              <li><NavLink to='Human'>
                 <img src={humanMed} alt="Human Medicines" />
                 <p>Human Medicines</p>
-              </a></li>
-              <li><a>
+              </NavLink></li>
+              <li><NavLink to='Animal'>
                 <img src={humanMed} alt="Animal Medicines" />
                 <p>Animal Medicines</p>
-              </a></li>
-              <li><a>
+              </NavLink></li>
+              <li><NavLink to='Receipt'>
                 <img src={reciept} alt="Receipt" />
                 <p>Receipt</p>
-              </a></li>
-              <li><a>
+              </NavLink></li>
+              <li><NavLink to='Employee'>
                 <img src={employee} alt="Employees" />
                 <p>Employees</p>
-              </a></li>
+              </NavLink></li>
             </ul>
           </nav>
         </aside>
-        <section className='content'></section>
+        <section className='content'>
+          <Outlet/>
+        </section>
       </main>
     </>
   );
