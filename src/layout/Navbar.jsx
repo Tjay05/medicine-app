@@ -25,7 +25,7 @@ const Navbar = () => {
                 <img src={humanMed} alt="Human Medicines" />
                 <p>Human Medicines</p>
               </NavLink></li>
-              <li><NavLink to='Animal'>
+              <li><NavLink to='Animal-Medicine'>
                 <img src={humanMed} alt="Animal Medicines" />
                 <p>Animal Medicines</p>
               </NavLink></li>
