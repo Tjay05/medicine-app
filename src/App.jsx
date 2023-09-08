@@ -1,9 +1,11 @@
+import Navbar from "./layout/Navbar"
 import Login from "./pages/Login"
 
 function App() {
   return (
     <>
-      <Login/>
+      {/* <Login/> */}
+      <Navbar/>
     </>
   )
 }

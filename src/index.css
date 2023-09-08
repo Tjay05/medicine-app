@@ -37,6 +37,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 /* Base Styles */
 body {
   background-color: var(--white);
+  overflow-x: hidden;
 }
 
 a {
@@ -64,9 +65,8 @@ input:focus {
 
 /* Utility Styles */
 .container {
-  width: 90%;
+  width: 70%;
   margin-inline: auto;
-  min-width: 926px;
 }
 
 /* Desktop Styles */
@@ -163,4 +163,55 @@ input:focus {
   font-family: var(--raleway);
   font-weight: 500;
   font-size: 1.05rem;
+}
+
+/* Layout Page */
+main.navbarContent {
+  width: 100vw;
+  display: flex;
+}
+
+/* Aside Nav */
+main.navbarContent aside.nav {
+  position: sticky;
+  top: 0;
+  width: 23%;
+  background-color: var(--login-navy-blue);
+  height: 100vh;
+}
+
+aside.nav nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: var(--white);
+  font-family: var(--roboto);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+aside.nav nav ul li:first-child {
+  font-family: Arial, sans-serif;
+  margin-block: 3.5rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+aside.nav nav ul li:first-child a img {
+  width: unset;
+}
+
+aside.nav nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+aside.nav nav ul li a img {
+  width: 25px;
+}
+
+/* Main Section Content */
+main.navbarContent section.content {
+  width: 67%;
+  margin-inline: auto;
 }
