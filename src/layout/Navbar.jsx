@@ -21,7 +21,7 @@ const Navbar = () => {
                 <img src={dashIcon} alt="Dashboard" />
                 <p>Dashboard</p>
               </NavLink></li>
-              <li><NavLink to='Human'>
+              <li><NavLink to='Human-Medicine'>
                 <img src={humanMed} alt="Human Medicines" />
                 <p>Human Medicines</p>
               </NavLink></li>

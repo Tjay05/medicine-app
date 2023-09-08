@@ -10,6 +10,8 @@ import {
 import Dashboard from "./pages/Dashboard";
 import HumanWrap from "./pages/humanMeds/HumanWrap";
 import AvailStock from "./pages/humanMeds/AvailableStock";
+import ItemSold from "./pages/humanMeds/ItemSold";
+import Expired from "./pages/humanMeds/Expired";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,8 +19,10 @@ const router = createBrowserRouter(
       <Route index element={<Login/>} />
       <Route element={<Navbar/>}>
         <Route path="Home" element={<Dashboard/>} />
-        <Route element={<HumanWrap/>}>
-          <Route path="Human" element={<AvailStock/>} />
+        <Route path="Human-Medicine" element={<HumanWrap/>}>
+          <Route index element={<AvailStock/>} />
+          <Route path="Items-Sold" element={<ItemSold/>} />
+          <Route path="Expired" element={<Expired/>} />
         </Route>
       </Route>
     </Route>
