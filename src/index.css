@@ -69,6 +69,11 @@ input:focus {
   margin-inline: auto;
 }
 
+.wrapper {
+  width: 92%;
+  margin-inline: auto;
+}
+
 /* Desktop Styles */
 /* Login Styles */
 .loginMain {
@@ -220,7 +225,7 @@ section.content header {
   position: sticky;
   top: 0;
   background-color: var(--white);
-  padding-block-start: 3rem;
+  padding-block-start: 2rem;
   border-bottom: .1px solid var(--light-ash-bg-search);
   box-shadow:  0px 0px 10px 1px rgba(0,0,0,0.1);
 }
@@ -248,6 +253,21 @@ section.content header .headerWrap .bottomHeader {
   margin-block-end: 1rem;
 }
 
+section.content header .headerWrap .bottomHeader.tree {
+  justify-content: space-between;
+}
+
+section.content header .headerWrap .bottomHeader.tree button {
+  background-color: var(--login-navy-blue);
+  font-family: var(--raleway);
+  font-weight: 500;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding-inline: 2rem;
+  height: 35px;
+}
+
 header .headerWrap .bottomHeader .searchForm {
   display: flex;
   align-items: center;
@@ -267,4 +287,89 @@ header .headerWrap .bottomHeader .searchForm input {
 
 header .headerWrap .bottomHeader .searchForm input::placeholder {
   color: var(--search-placeholder);
+}
+
+/* Dashboard content */
+main.dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-block: 6rem;
+  font-family: var(--lato);
+}
+
+main.dash article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 3rem;
+  font-weight: 600;
+  background-color: var(--light-ash-bg-search);
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+main.dash article p.numAvailable {
+  color: var(--login-navy-blue);
+}
+
+/* Human Medicines */
+nav.meds {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-block: 2rem;
+  font-family: var(--roboto);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+nav.meds a {
+  border-bottom: 2px solid white;
+  padding: .3rem 1rem;
+  color: var(--login-navy-blue);
+}
+
+nav.meds a.active {
+  color: var(--active-lite-blue);
+  border-color: var(--active-lite-blue);
+}
+
+/* Main Available Stock */
+main.wrapper .availableStock {
+  margin-block-end: 2rem;
+  font-family: var(--lato);
+  color: var(--font-dark-blue);
+}
+
+main.wrapper .availableStock .stockHead {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+main.wrapper .availableStock .stockHead > * {
+  flex: 1;
+}
+
+main.wrapper .availableStock .stockDetails {
+  display: flex;
+  align-items: center;
+  margin-block: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-block: 1rem .5rem;
+  border-bottom: 1px solid var(--black);
+}
+
+main.wrapper .availableStock .stockDetails > * {
+  flex: 1;
+}
+
+main.wrapper .availableStock .stockDetails .date {
+  display: flex;
+  justify-content: space-between;
 }

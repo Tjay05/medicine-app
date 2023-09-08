@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 // Pic Imports
 import notification from '../assets/icons/notification.svg'
 import search from '../assets/icons/search.svg'
@@ -19,6 +21,16 @@ const Dashboard = () => {
           </div>
         </div>
       </header>
+      <main className="dash wrapper">
+        <article>
+          <p>Human Medicines</p>
+          <p className='numAvailable'>7</p>
+        </article>
+        <article>
+          <p>Animal Medicines</p>
+          <p className='numAvailable'>22</p>
+        </article>
+      </main>
     </>
   );
 }
