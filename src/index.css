@@ -268,6 +268,42 @@ section.content header .headerWrap .bottomHeader.tree button {
   height: 35px;
 }
 
+/* PopupForm */
+.popupForm {
+  position: absolute;
+  top: 100%;
+  width: 400px;
+  right: 0;
+  transform: translateX(-10%);
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.popupForm form .popupFormHeader {
+  background-color: var(--login-navy-blue);
+  border-radius: 5px 5px 0px 0px;
+  color: var(--white);
+}
+
+.popupForm form .popupFormHeader .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+}
+
+.popupForm form .popupFormHeader h2 {
+  font-size: 1.3rem;
+}
+
+.popupForm form .popupFormHeader .closeIcon {
+  background-color: var(--white);
+  padding: .5rem;
+  border-radius: 50%;
+}
+
 header .headerWrap .bottomHeader .searchForm {
   display: flex;
   align-items: center;
