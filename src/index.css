@@ -257,6 +257,27 @@ section.content header .headerWrap .bottomHeader.tree {
   justify-content: space-between;
 }
 
+header .headerWrap .bottomHeader .searchForm {
+  display: flex;
+  align-items: center;
+}
+
+header .headerWrap .bottomHeader .searchForm input {
+  font-family: var(--roboto);
+  font-weight: 400;
+  border: none;
+  border-radius: 8px;
+  padding-inline: 1rem;
+  width: 450px;
+  padding-block: .6rem ;
+  background-color: var(--light-ash-bg-search);
+  color: var(--search-placeholder);
+}
+
+header .headerWrap .bottomHeader .searchForm input::placeholder {
+  color: var(--search-placeholder);
+}
+
 section.content header .headerWrap .bottomHeader.tree button {
   background-color: var(--login-navy-blue);
   font-family: var(--raleway);
@@ -277,8 +298,9 @@ section.content header .headerWrap .bottomHeader.tree button {
   transform: translateX(-10%);
   background-color: #fff;
   border: none;
+  /* border: 1px solid #ccc; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .popupForm form .popupFormHeader {
@@ -295,34 +317,58 @@ section.content header .headerWrap .bottomHeader.tree button {
 }
 
 .popupForm form .popupFormHeader h2 {
-  font-size: 1.3rem;
+  font-family: var(--lato);
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .popupForm form .popupFormHeader .closeIcon {
+  cursor: pointer;
   background-color: var(--white);
   padding: .5rem;
   border-radius: 50%;
 }
 
-header .headerWrap .bottomHeader .searchForm {
+.popupForm form .formField {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  font-family: var(--lato);
+  font-weight: 500;
+  padding-block: 1rem 2rem;
 }
 
-header .headerWrap .bottomHeader .searchForm input {
-  font-family: var(--roboto);
-  font-weight: 400;
+.popupForm form .formField input:first-child {
+  width: 100%;
   border: none;
-  border-radius: 8px;
-  padding-inline: 1rem;
-  width: 450px;
-  padding-block: .6rem ;
-  background-color: var(--light-ash-bg-search);
-  color: var(--search-placeholder);
+  font-size: 1.2rem;
+  padding-block-end: .5rem;
+  border-bottom: 1px solid hsla(0, 0%, 65%, 1);
 }
 
-header .headerWrap .bottomHeader .searchForm input::placeholder {
-  color: var(--search-placeholder);
+.popupForm form .formField .twoForms {
+  display: flex;
+  margin-block: 1.5rem;
+  font-size: 0.9rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
+.popupForm form .formField .twoForms input, .twoForms select {
+  margin-block: .5rem 1rem;
+  color: black;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: .6rem .5rem;
+  font-family: inherit;
+  font-weight: inherit;
+  border: 1px solid var(--login-navy-blue);
+}
+
+.popupForm form .formField .twoForms .firstForm, .popupForm form .formField .twoForms .secondForm {
+  width: 50%;
 }
 
 /* Dashboard content */
