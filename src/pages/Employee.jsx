@@ -5,7 +5,6 @@ import { useState } from 'react';
 // Pic Imports
 import search from '../assets/icons/search.svg';
 import notification from '../assets/icons/notification.svg';
-import { GrEdit } from 'react-icons/gr';
 
 const Employee = () => {
   const location = useLocation();

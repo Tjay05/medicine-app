@@ -1,5 +1,5 @@
 // Pic Imports
-import edit from '../../assets/icons/edit.svg';
+import { GrEdit } from 'react-icons/gr';
 
 const AvailableStock = () => {
   return ( 
@@ -19,7 +19,7 @@ const AvailableStock = () => {
           <p>#1000</p>
           <div className="date">
             <p>November 2022</p>
-            <img src={edit} alt="Edit" />
+            <GrEdit/>
           </div>
         </div>
         <div className="stockDetails">
@@ -29,7 +29,7 @@ const AvailableStock = () => {
           <p>#2000</p>
           <div className="date">
             <p>June 2022</p>
-            <img src={edit} alt="Edit" />
+            <GrEdit/>
           </div>
         </div>
       </div>
