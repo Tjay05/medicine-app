@@ -1,12 +1,13 @@
 import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { GrClose } from "react-icons/gr";
-
-// Pic Imports
-import search from '../../assets/icons/search.svg';
-import notification from '../../assets/icons/notification.svg';
 import { useState } from 'react';
 
-const HumanWrap = () => {
+// Pic Imports
+import search from '../assets/icons/search.svg';
+import notification from '../assets/icons/notification.svg';
+import { GrEdit } from 'react-icons/gr';
+
+const Employee = () => {
   const location = useLocation();
   const button = location.pathname.includes('/Expired')
   const [showPopup, setShowPopup] = useState(false);
@@ -19,13 +20,12 @@ const HumanWrap = () => {
   const notifClicked = () => {
     history('../Notifications')
   }
-
-  return ( 
+  return (
     <>
       <header>
         <div className="headerWrap">
           <nav className="topHeader">
-            <h1>Human Medicines</h1>
+            <h1>Employees</h1>
             <img style={{cursor: 'pointer'}} onClick={notifClicked} src={notification} alt="Bell Icon" />
           </nav>
           <div className="bottomHeader tree">
@@ -41,7 +41,7 @@ const HumanWrap = () => {
                   <form>
                     <div className="popupFormHeader">
                       <div className="wrapper">
-                        <h2>Human Medicine</h2>
+                        <h2>New employee</h2>
                         <GrClose onClick={()=> setShowPopup(false)} size={30} className='closeIcon'/>
                       </div>
                     </div>
@@ -49,24 +49,12 @@ const HumanWrap = () => {
                       <input type="text" placeholder='Name' />
                       <div className="twoForms">
                         <div className="firstForm">
-                          <label htmlFor="type">Quantity Type</label><br />
-                          <select id="type">
-                            <option>Select Type</option>
-                            <option value="Carton">Carton</option>
-                            <option value="Pieces">Pieces</option>
-                          </select>
-                          <label htmlFor="carton">Quantity of cartons/pieces</label><br />
-                          <input type="text" id='carton' /><br />
-                          <label htmlFor="price">Price NGN</label><br />
-                          <input type="number" id="price" />
+                          <label htmlFor="email">Email Address</label><br />
+                          <input type="email" id="email" />
                         </div>
                         <div className="secondForm">
-                          <label htmlFor="Shelf">Shelf Life</label><br />
-                          <input type="text" id='Shelf' /><br />
-                          <label htmlFor="weight">Net weight (gm/ml)s</label><br />
-                          <input type="text" id='weight' /><br />
-                          <label htmlFor="date">Expiry Date</label><br />
-                          <input type="date" id="date" />
+                          <label htmlFor="number">Phone Number</label><br />
+                          <input type="number" id="number" />
                         </div>
                       </div>
                       <button>Done</button>
@@ -80,16 +68,33 @@ const HumanWrap = () => {
           </div>
         </div>
       </header>
-      <nav className=" wrapper meds">
-        <NavLink to='/Human-Medicine/'>Available Stock</NavLink>
-        <NavLink to='Items-Sold'>Item sold</NavLink>
-        <NavLink to='Expired'>Expired</NavLink>
-      </nav>
-      <main className="wrapper">
-        <Outlet/>
+      <main className="wrapper employee">
+        <div className="availableStock">
+          <div className="stockHead">
+            <p>Name</p>
+            <p>Email</p>
+            <p>Phone</p>
+            <p>ID</p>
+            <p>Action</p>
+          </div>
+          <div className="stockDetails">
+            <p>Stella Agadi</p>
+            <p>stellagadi@gmail.com</p>
+            <p>08012345678</p>
+            <p>12345HG</p>
+            <p>Remove</p>
+          </div>
+          <div className="stockDetails">
+            <p>Stella Agadi</p>
+            <p>stellagadi@gmail.com</p>
+            <p>08012345678</p>
+            <p>12345HG</p>
+            <p>Remove</p>
+          </div>
+        </div>
       </main>
     </>
   );
 }
  
-export default HumanWrap;
+export default Employee;
