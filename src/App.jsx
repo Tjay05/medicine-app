@@ -16,6 +16,7 @@ import ExpiredMeds from "./pages/animalMeds/Expired";
 import AnimalWrap from "./pages/animalMeds/AnimalWrap";
 import AvailableStock from "./pages/animalMeds/AvailableStock";
 import ItemsSold from "./pages/animalMeds/ItemSold";
+import Notification from "./pages/Notifixation";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
           <Route path="Items-Sold" element={<ItemsSold/>} />
           <Route path="Expired" element={<ExpiredMeds/>} />
         </Route>
+        <Route path="Notifications" element={<Notification/>} />
       </Route>
     </Route>
   )

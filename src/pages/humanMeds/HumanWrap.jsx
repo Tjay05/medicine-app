@@ -1,4 +1,4 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { GrClose } from "react-icons/gr";
 
 // Pic Imports
@@ -16,13 +16,18 @@ const HumanWrap = () => {
     showPopup === false ? setShowPopup(true) : setShowPopup(false)
   }
 
+  const history = useNavigate();
+  const notifClicked = () => {
+    history('../Notifications')
+  }
+
   return ( 
     <>
       <header>
         <div className="headerWrap">
           <nav className="topHeader">
             <h1>Human Medicines</h1>
-            <img src={notification} alt="Bell Icon" />
+            <img style={{cursor: 'pointer'}} onClick={notifClicked} src={notification} alt="Bell Icon" />
           </nav>
           <div className="bottomHeader tree">
             <div className="searchForm">

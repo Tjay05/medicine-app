@@ -455,3 +455,25 @@ main.wrapper .availableStock .stockDetails .date {
   display: flex;
   justify-content: space-between;
 }
+
+/* Notification Page */
+main.notification.wrapper {
+  font-family: var(--lato);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--font-dark-blue);
+  margin-block: 2rem;
+}
+
+main.notification .notification-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: .7rem;
+  margin-block: 2rem;
+  border-bottom: 1px solid var(--font-dark-blue);
+}
+
+main.notification .notification-preview img {
+  margin-inline-end: 1rem;
+}

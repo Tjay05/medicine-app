@@ -1,21 +1,26 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // Pic Imports
 import notification from '../assets/icons/notification.svg'
 import search from '../assets/icons/search.svg'
 
 const Dashboard = () => {
+  const history = useNavigate();
+  const notifClicked = () => {
+    history('../Notifications')
+  }
+
   return ( 
     <>
       <header>
         <div className="headerWrap">
           <nav className="topHeader">
             <h1>Dashboard</h1>
-            <img src={notification} alt="Bell Icon" />
+            <img style={{cursor: 'pointer'}} onClick={notifClicked} src={notification} alt="Bell Icon" />
           </nav>
           <div className="bottomHeader">
             <div className="searchForm">
-              <img src={search} alt="" />
+              <img src={search} alt="Search" />
               <input placeholder='Search' type="text" />
             </div>
           </div>
