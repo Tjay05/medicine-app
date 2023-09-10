@@ -51,7 +51,6 @@ const AnimalWrap = () => {
                               <option value="Carton">Carton</option>
                               <option value="Pieces">Pieces</option>
                             </select>
-                            {/* <input type="text" id='type' /><br /> */}
                             <label htmlFor="carton">Quantity of cartons/pieces</label><br />
                             <input type="text" id='carton' /><br />
                             <label htmlFor="price">Price NGN</label><br />
