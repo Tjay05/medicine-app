@@ -298,7 +298,6 @@ section.content header .headerWrap .bottomHeader.tree button {
   transform: translateX(-10%);
   background-color: #fff;
   border: none;
-  /* border: 1px solid #ccc; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
