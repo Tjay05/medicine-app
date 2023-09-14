@@ -8,16 +8,120 @@ import { useState } from 'react';
 
 const HumanWrap = () => {
   const location = useLocation();
-  const button = location.pathname.includes('/Expired')
+  const button = location.pathname.includes('/Expired') || location.pathname.includes('/Items-Sold');
   const [showPopup, setShowPopup] = useState(false);
+  const [selectedType, setSelectedType] = useState('');
 
   const handleClick = () => {
-    showPopup === false ? setShowPopup(true) : setShowPopup(false)
+    setShowPopup(!showPopup);
   }
+  
+  const handlePopupClose = () => {
+    setShowPopup(false);
+    window.location.reload();
+  };
 
   const history = useNavigate();
   const notifClicked = () => {
     history('../Notifications')
+  }
+
+  const handleTypeChange = (event) => {
+    setSelectedType(event.target.value);
+  }
+
+  const renderPopupContent = () => {
+    if (selectedType === 'Carton') {
+
+      return (
+        <>
+          <div className="firstForm">
+            <label htmlFor="type">Quantity Type</label><br />
+            <select value={selectedType} onChange={handleTypeChange} id="type">
+              <option value={selectedType}>{selectedType}</option>
+              <option value="Packs">Packs</option>
+              <option value="Pieces">Pieces</option>
+            </select>
+            <label htmlFor="carton">Quantity of cartons</label><br />
+            <input type="number" id='carton' /><br />
+            <label htmlFor="perpieces">Num. of Pieces per pack</label><br />
+            <input type="number" id='percarton' /><br />
+            <label htmlFor="weight">Net weight (gm/ml)s</label><br />
+            <input type="text" id='weight' /><br />
+            <label htmlFor="price">Price NGN</label><br />
+            <input type="number" id="price" />
+          </div>
+          <div className="secondForm">
+            <label htmlFor="Shelf">Shelf Life</label><br />
+            <input type="text" id='Shelf' /><br />
+            <label htmlFor="percarton">Num. of packs per carton</label><br />
+            <input type="number" id='percarton' /><br />
+            <label htmlFor="total">Total Pieces</label><br />
+            <input disabled type="number" id="total" />
+            <label htmlFor="date">Expiry Date</label><br />
+            <input type="date" id="date" />
+          </div>
+        </>
+      );
+    } else if (selectedType === 'Packs') {
+      return (
+        <>
+          <div className="firstForm">
+            <label htmlFor="type">Quantity Type</label><br />
+            <select value={selectedType} onChange={handleTypeChange} id="type">
+              <option value={selectedType}>{selectedType}</option>
+              <option value="Carton">Carton</option>
+              <option value="Pieces">Pieces</option>
+            </select>
+            <label htmlFor="pack">Quantity of packs</label><br />
+            <input type="number" id='pack' /><br />
+            <label htmlFor="perpieces">Num. of Pieces per pack</label><br />
+            <input type="number" id='percarton' /><br />
+            <label htmlFor="price">Price NGN</label><br />
+            <input type="number" id="price" />
+          </div>
+          <div className="secondForm">
+            <label htmlFor="Shelf">Shelf Life</label><br />
+            <input type="text" id='Shelf' /><br />
+            <label htmlFor="weight">Net weight (gm/ml)s</label><br />
+            <input type="text" id='weight' /><br />
+            <label htmlFor="total">Total Pieces</label><br />
+            <input disabled type="number" id="total" />
+            <label htmlFor="date">Expiry Date</label><br />
+            <input type="date" id="date" />
+          </div>
+        </>
+      );
+    } else if (selectedType === 'Pieces') {
+      return (
+        <>
+          <div className="firstForm">
+            <label htmlFor="type">Quantity Type</label><br />
+            <select value={selectedType} onChange={handleTypeChange} id="type">
+              <option value={selectedType}>{selectedType}</option>
+              <option value="Carton">Carton</option>
+              <option value="Pieces">Packs</option>
+            </select>
+            <label htmlFor="piece">Quantity of pieces</label><br />
+            <input type="number" id='piece' /><br />
+            <label htmlFor="price">Price NGN</label><br />
+            <input type="number" id="price" />
+          </div>
+          <div className="secondForm">
+            <label htmlFor="Shelf">Shelf Life</label><br />
+            <input type="text" id='Shelf' /><br />
+            <label htmlFor="weight">Net weight (gm/ml)s</label><br />
+            <input type="text" id='weight' /><br />
+            <label htmlFor="total">Total Pieces</label><br />
+            <input disabled type="number" id="total" />
+            <label htmlFor="date">Expiry Date</label><br />
+            <input type="date" id="date" />
+          </div>
+        </>
+      );
+    } else {
+      return null;
+    }
   }
 
   return ( 
@@ -48,31 +152,21 @@ const HumanWrap = () => {
                     <div className="formField wrapper">
                       <input type="text" placeholder='Name' />
                       <div className="twoForms">
-                        <div className="firstForm">
-                          <label htmlFor="type">Quantity Type</label><br />
-                          <select id="type">
-                            <option>Select Type</option>
-                            <option value="Carton">Carton</option>
-                            <option value="Packs">Packs</option>
-                            <option value="Pieces">Pieces</option>
-                          </select>
-                          <label htmlFor="carton">Quantity of cartons</label><br />
-                          <input type="text" id='carton' /><br />
-                          <label htmlFor="perpieces">Num. of Pieces per pack</label><br />
-                          <input type="text" id='percarton' /><br />
-                          <label htmlFor="price">Price NGN</label><br />
-                          <input type="number" id="price" />
-                        </div>
-                        <div className="secondForm">
-                          <label htmlFor="Shelf">Shelf Life</label><br />
-                          <input type="text" id='Shelf' /><br />
-                          <label htmlFor="percarton">Num. of packs per carton</label><br />
-                          <input type="text" id='percarton' /><br />
-                          <label htmlFor="weight">Net weight (gm/ml)s</label><br />
-                          <input type="text" id='weight' /><br />
-                          <label htmlFor="date">Expiry Date</label><br />
-                          <input type="date" id="date" />
-                        </div>
+                          {selectedType ? (
+                            <>
+                              {renderPopupContent()}
+                            </>
+                          ) : (
+                            <div className="firstForm">
+                              <label htmlFor="type">Quantity Type</label><br />
+                              <select value={selectedType} onChange={handleTypeChange} id="type">
+                                <option>Select Type</option>
+                                <option value="Carton">Carton</option>
+                                <option value="Packs">Packs</option>
+                                <option value="Pieces">Pieces</option>
+                              </select>
+                            </div>
+                          )}
                       </div>
                       <button>Done</button>
                     </div>

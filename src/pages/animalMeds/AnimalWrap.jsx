@@ -6,7 +6,6 @@ import search from '../../assets/icons/search.svg';
 import notification from '../../assets/icons/notification.svg';
 import { useState } from 'react';
 
-
 const AnimalWrap = () => {
   const location = useLocation();
   const button = location.pathname.includes('/Expired') || location.pathname.includes('/Items-Sold');
