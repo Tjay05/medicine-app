@@ -18,12 +18,12 @@ const Dashboard = () => {
             <h1>Dashboard</h1>
             <img style={{cursor: 'pointer'}} onClick={notifClicked} src={notification} alt="Bell Icon" />
           </nav>
-          <div className="bottomHeader">
+          {/* <div className="bottomHeader">
             <div className="searchForm">
               <img src={search} alt="Search" />
               <input placeholder='Search' type="text" />
             </div>
-          </div>
+          </div> */}
         </div>
       </header>
       <main className="dash wrapper">

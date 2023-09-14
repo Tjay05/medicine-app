@@ -485,3 +485,12 @@ main.wrapper.employee {
 main.wrapper.employee .availableStock .stockDetails p:last-child {
   color: var(--active-lite-blue);
 }
+
+/* Receipt */
+main.receipt {
+  margin-block: 3rem;
+}
+
+main.receipt .receiptWrapper {
+  width: 68%;
+}

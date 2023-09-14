@@ -29,10 +29,10 @@ const Navbar = () => {
                 <img src={humanMed} alt="Animal Medicines" />
                 <p>Animal Medicines</p>
               </NavLink></li>
-              {/* <li><NavLink to='Receipt'>
+              <li><NavLink to='Receipt'>
                 <img src={reciept} alt="Receipt" />
                 <p>Receipt</p>
-              </NavLink></li> */}
+              </NavLink></li>
               <li><NavLink to='Employee'>
                 <img src={employee} alt="Employees" />
                 <p>Employees</p>
