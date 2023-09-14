@@ -27,11 +27,11 @@ const Dashboard = () => {
         </div>
       </header>
       <main className="dash wrapper">
-        <article>
+        <article onClick={() => history('../Human-Medicine')}>
           <p>Human Medicines</p>
           <p className='numAvailable'>7</p>
         </article>
-        <article>
+        <article onClick={() => history('../Animal-Medicine')}>
           <p>Animal Medicines</p>
           <p className='numAvailable'>22</p>
         </article>

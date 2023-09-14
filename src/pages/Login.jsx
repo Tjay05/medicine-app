@@ -1,8 +1,10 @@
 // Picture Imports
 import medCare from '../assets/images/undraw_medical_care_movn.png'
 import logo from '../assets/icons/logo.svg'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const history = useNavigate();
   return ( 
     <>
       <main className='loginMain'>
@@ -20,7 +22,7 @@ const Login = () => {
             <p>Please input your credentials to continue using this app</p>
             <form>
               <input placeholder='ID No.' type="text" />
-              <button type='submit'>Continue</button>
+              <button onClick={() => history('Home')} type='submit'>Continue</button>
             </form>
           </div>
         </section>
