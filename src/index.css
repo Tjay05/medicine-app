@@ -222,7 +222,7 @@ main.navbarContent section.content {
 
 /* Dashboard */
 section.content header {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   background-color: var(--white);
   padding-block-start: 2rem;
@@ -292,9 +292,9 @@ section.content header .headerWrap .bottomHeader.tree button {
 /* PopupForm */
 .popupForm {
   position: absolute;
-  top: 100%;
+  top: 100px;
   width: 400px;
-  right: 0;
+  right: -20px;
   transform: translateX(-10%);
   background-color: #fff;
   border: none;
@@ -312,7 +312,7 @@ section.content header .headerWrap .bottomHeader.tree button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding-block: .8rem;
 }
 
 .popupForm form .popupFormHeader h2 {
@@ -333,29 +333,28 @@ section.content header .headerWrap .bottomHeader.tree button {
   flex-direction: column;
   font-family: var(--lato);
   font-weight: 500;
-  padding-block: 1rem 2rem;
+  padding-block: 1rem;
 }
 
 .popupForm form .formField input:first-child {
   width: 100%;
   border: none;
   font-size: 1.2rem;
-  padding-block-end: .5rem;
+  padding-block-end: .2rem;
   border-bottom: 1px solid hsla(0, 0%, 65%, 1);
 }
 
 .popupForm form .formField .twoForms {
   display: flex;
-  margin-block: 1.5rem;
+  margin-block: 1rem;
   font-size: 0.9rem;
-  align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .popupForm form .formField .twoForms input, .twoForms select {
-  margin-block: .5rem 1rem;
+  margin-block: .5rem .8rem;
   color: black;
   border: none;
   width: 100%;

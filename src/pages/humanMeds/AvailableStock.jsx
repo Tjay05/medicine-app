@@ -31,6 +31,7 @@ const AvailStock = () => {
             <GrEdit/>
           </div>
         </div>
+        lorem1000
       </div>
     </>
   );

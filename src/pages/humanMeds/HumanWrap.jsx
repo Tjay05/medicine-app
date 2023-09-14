@@ -53,16 +53,21 @@ const HumanWrap = () => {
                           <select id="type">
                             <option>Select Type</option>
                             <option value="Carton">Carton</option>
+                            <option value="Packs">Packs</option>
                             <option value="Pieces">Pieces</option>
                           </select>
-                          <label htmlFor="carton">Quantity of cartons/pieces</label><br />
+                          <label htmlFor="carton">Quantity of cartons</label><br />
                           <input type="text" id='carton' /><br />
+                          <label htmlFor="perpieces">Num. of Pieces per pack</label><br />
+                          <input type="text" id='percarton' /><br />
                           <label htmlFor="price">Price NGN</label><br />
                           <input type="number" id="price" />
                         </div>
                         <div className="secondForm">
                           <label htmlFor="Shelf">Shelf Life</label><br />
                           <input type="text" id='Shelf' /><br />
+                          <label htmlFor="percarton">Num. of packs per carton</label><br />
+                          <input type="text" id='percarton' /><br />
                           <label htmlFor="weight">Net weight (gm/ml)s</label><br />
                           <input type="text" id='weight' /><br />
                           <label htmlFor="date">Expiry Date</label><br />
