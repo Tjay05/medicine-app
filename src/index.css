@@ -389,6 +389,7 @@ main.dash article {
   background-color: var(--light-ash-bg-search);
   border-radius: 10px;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 main.dash article p.numAvailable {
