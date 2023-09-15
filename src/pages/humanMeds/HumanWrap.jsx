@@ -52,14 +52,16 @@ const HumanWrap = () => {
             <input type="number" id="price" />
           </div>
           <div className="secondForm">
-            <label htmlFor="Shelf">Shelf Life</label><br />
-            <input type="text" id='Shelf' /><br />
+            <label htmlFor="reminder">Reminder</label><br />
+            <select id="reminder">
+              <option value="">Remind on Tue</option>
+            </select>
             <label htmlFor="percarton">Num. of packs per carton</label><br />
             <input type="number" id='percarton' /><br />
             <label htmlFor="total">Total Pieces</label><br />
             <input disabled type="number" id="total" />
             <label htmlFor="date">Expiry Date</label><br />
-            <input type="date" id="date" />
+            <input type="month" id="date" />
           </div>
         </>
       );
@@ -81,14 +83,16 @@ const HumanWrap = () => {
             <input type="number" id="price" />
           </div>
           <div className="secondForm">
-            <label htmlFor="Shelf">Shelf Life</label><br />
-            <input type="text" id='Shelf' /><br />
+            <label htmlFor="reminder">Reminder</label><br />
+            <select id="reminder">
+              <option value="">Remind on Tue</option>
+            </select>
             <label htmlFor="weight">Net weight (gm/ml)s</label><br />
             <input type="text" id='weight' /><br />
             <label htmlFor="total">Total Pieces</label><br />
             <input disabled type="number" id="total" />
             <label htmlFor="date">Expiry Date</label><br />
-            <input type="date" id="date" />
+            <input type="month" id="date" />
           </div>
         </>
       );
@@ -108,14 +112,16 @@ const HumanWrap = () => {
             <input type="number" id="price" />
           </div>
           <div className="secondForm">
-            <label htmlFor="Shelf">Shelf Life</label><br />
-            <input type="text" id='Shelf' /><br />
+            <label htmlFor="reminder">Reminder</label><br />
+            <select id="reminder">
+              <option value="">Remind on Tue</option>
+            </select>
             <label htmlFor="weight">Net weight (gm/ml)s</label><br />
             <input type="text" id='weight' /><br />
             <label htmlFor="total">Total Pieces</label><br />
             <input disabled type="number" id="total" />
             <label htmlFor="date">Expiry Date</label><br />
-            <input type="date" id="date" />
+            <input type="month" id="date" />
           </div>
         </>
       );
