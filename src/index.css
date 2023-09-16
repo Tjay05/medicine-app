@@ -246,6 +246,10 @@ section.content header .headerWrap nav.topHeader {
   color: var(--black);
 }
 
+section.content header .headerWrap nav.topHeader img {
+  cursor: pointer;
+}
+
 section.content header .headerWrap .bottomHeader {
   display: flex;
   align-items: center;

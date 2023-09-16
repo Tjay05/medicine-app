@@ -136,7 +136,7 @@ const HumanWrap = () => {
         <div className="headerWrap">
           <nav className="topHeader">
             <h1>Human Medicines</h1>
-            <img style={{cursor: 'pointer'}} onClick={notifClicked} src={notification} alt="Bell Icon" />
+            <img onClick={notifClicked} src={notification} alt="Bell Icon" />
           </nav>
           <div className="bottomHeader tree">
             <div className="searchForm">
