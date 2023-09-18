@@ -159,6 +159,13 @@ input:focus {
   color: var(--font-dark-blue);
 }
 
+p.err-mssg {
+  font-family: inherit;
+  font-style: italic;
+  color: red;
+  font-weight: 800;
+}
+
 .loginMain section .loginBody form button {
   border-radius: 5px;
   border: none;
