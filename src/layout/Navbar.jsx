@@ -10,13 +10,15 @@ import { createContext, useState } from 'react';
 const PopupContext = createContext();
 const Navbar = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedType, setSelectedType] = useState('');
   const handleClick = () => setShowPopup(!showPopup);
-  const handleTypeChange = (e) => setSelectedType(e.target.value);
+  // Special
+  const [quantity_type, setQuantity_type] = useState('');
+  const handleTypeChange = (e) => setQuantity_type(e.target.value);
+
 
   const popupContextValue = {
     showPopup, setShowPopup,
-    selectedType, setSelectedType,
+    quantity_type, setQuantity_type,
     handleClick, handleTypeChange
   }
 

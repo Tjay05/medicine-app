@@ -11,11 +11,22 @@ import Packs from "./PopupFields/Packs";
 import Tablets from "./PopupFields/Tablets";
 
 const Popup = () => {
-  const { showPopup, setShowPopup, selectedType, handleClick, handleTypeChange } = useContext(PopupContext);
-  const page = useState('Human Medicine');
+  const { showPopup, setShowPopup, handleClick, handleTypeChange, quantity_type, setQuantity_type } = useContext(PopupContext);
 
+  // ALL FIELDS
+  const [name, setName] = useState('');
+  const [Reminder, setReminder] = useState('');
+  const [carton, setCarton] = useState();
+  const [pack, setPack] = useState();
+  const [card, setCard] = useState();
+  const [tablet, setTablet] = useState();
+  const [Total_pieces, setTotal_pieces] = useState(2);
+  const [weight, setWeight] = useState('');
+  const [price, setPrice] = useState();
+  const [expiryDate, setExpiryDate] = useState('');
+  
   const location = useLocation();
-  const name = location.pathname.includes('/Animal-Medicine')
+  const path = location.pathname.includes('/Animal-Medicine')
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -23,21 +34,21 @@ const Popup = () => {
   };
 
   const renderPopupContent = () => {
-    if (selectedType === 'Carton') {
+    if (quantity_type === 'carton') {
       return (
-        <Carton/>
+        <Carton name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} carton={carton} setCarton={setCarton} pack={pack} setPack={setPack} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
       );
-    } else if (selectedType === 'Packs') {
+    } else if (quantity_type === 'pack') {
       return (
-        <Packs/>
+        <Packs name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} pack={pack} setPack={setPack} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
       );
-    } else if (selectedType === 'Cards') {
+    } else if (quantity_type === 'card') {
       return (
-        <Cards/>
+        <Cards name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
       );
-    } else if (selectedType === 'Tablets') {
+    } else if (quantity_type === 'tablet') {
       return (
-        <Tablets/>
+        <Tablets name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
       );
     } else {
       return null;
@@ -52,27 +63,31 @@ const Popup = () => {
         <form>
           <div className="popupFormHeader">
             <div className="wrapper">
-            {!name &&(<h2>Human Medicine</h2>)}
-            {name &&(<h2>Animal Medicine</h2>)}
+            {!path &&(<h2>Human Medicine</h2>)}
+            {path &&(<h2>Animal Medicine</h2>)}
               <GrClose onClick={handlePopupClose} size={30} className='closeIcon'/>
             </div>
           </div>
           <div className="formField wrapper">
-            <input type="text" placeholder='Name' />
+            <input 
+              type="text" placeholder='Name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <div className="twoForms">
-                {selectedType ? (
+                {quantity_type ? (
                   <>
                     {renderPopupContent()}
                   </>
                 ) : (
                   <div className="firstForm">
                     <label htmlFor="type">Quantity Type</label><br />
-                    <select value={selectedType} onChange={handleTypeChange} id="type">
+                    <select value={quantity_type} onChange={handleTypeChange} id="type">
                       <option>Select Type</option>
-                      <option value="Carton">Carton</option>
-                      <option value="Packs">Packs</option>
-                      <option value="Cards">Cards</option>
-                      <option value="Tablets">Tablets</option>
+                      <option value="carton">Carton</option>
+                      <option value="pack">Packs</option>
+                      <option value="card">Cards</option>
+                      <option value="tablet">Tablets</option>
                     </select>
                   </div>
                 )}
