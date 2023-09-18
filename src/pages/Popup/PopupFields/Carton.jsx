@@ -22,13 +22,13 @@ const Carton = (
         <input 
           type="number" id='carton' 
           value={carton}
-          onChange={(e) => setCarton(e.target.value)}
+          onChange={(e) => setCarton(Number(e.target.value))}
         /><br />
         <label htmlFor="perpieces">Num. of Cards per pack</label><br />
         <input 
           type="number" id='percarton' 
           value={card}
-          onChange={(e) => setCard(e.target.value)}
+          onChange={(e) => setCard(Number(e.target.value))}
         /><br />
         <label htmlFor="weight">Net weight (gm/ml)s</label><br />
         <input 
@@ -57,13 +57,13 @@ const Carton = (
         <input 
           type="number" id='percarton' 
           value={pack} 
-          onChange={(e) => setPack(e.target.value)}
+          onChange={(e) => setPack(Number(e.target.value))}
         /><br />
         <label htmlFor="pertablets">Num. of tablets per card</label><br />
         <input 
           type="number" id='pertablets' 
           value={tablet} 
-          onChange={(e) => setTablet(e.target.value)}
+          onChange={(e) => setTablet(Number(e.target.value))}
           /><br />
         <label htmlFor="total">Total Tablets</label><br />
         <input disabled value={Total_pieces} type="number" id="total" />
@@ -71,7 +71,7 @@ const Carton = (
         <input 
           type="number" id="price" 
           value={price} 
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
       </div>
     </>

@@ -60,6 +60,7 @@ const Popup = () => {
 
   const handleStockAdd = async (e) => {
     e.preventDefault();
+    console.log('Clicked');
     try {
       const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
         method: 'POST',
@@ -83,6 +84,7 @@ const Popup = () => {
       });
       const data = await response.json()
       if (response.ok) {
+        window.location.reload()
         console.log(data);
       } else if (response.status === 401) {
         console.log(data);
