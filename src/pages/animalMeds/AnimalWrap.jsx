@@ -31,7 +31,7 @@ const AnimalWrap = () => {
         </div>
       </header>
       <nav className=" wrapper meds">
-        <NavLink to='/Animal-Medicine/'>Available Stock</NavLink>
+        <NavLink to='/Animal-Medicine'>Available Stock</NavLink>
         <NavLink to='Items-Sold'>Item sold</NavLink>
         <NavLink to='Expired'>Expired</NavLink>
       </nav>

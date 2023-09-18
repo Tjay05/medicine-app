@@ -31,7 +31,7 @@ const HumanWrap = () => {
         </div>
       </header>
       <nav className=" wrapper meds">
-        <NavLink to='/Human-Medicine/'>Available Stock</NavLink>
+        <NavLink to='/Human-Medicine'>Available Stock</NavLink>
         <NavLink to='Items-Sold'>Item sold</NavLink>
         <NavLink to='Expired'>Expired</NavLink>
       </nav>

@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { useContext } from "react";
 import { GrClose } from "react-icons/gr";
+import { useLocation } from "react-router-dom";
 import { PopupContext } from "../../layout/Navbar";
+
+// Field Imports
 import Cards from "./PopupFields/Cards";
 import Carton from "./PopupFields/Carton";
 import Packs from "./PopupFields/Packs";
@@ -8,6 +12,10 @@ import Tablets from "./PopupFields/Tablets";
 
 const Popup = () => {
   const { showPopup, setShowPopup, selectedType, handleClick, handleTypeChange } = useContext(PopupContext);
+  const page = useState('Human Medicine');
+
+  const location = useLocation();
+  const name = location.pathname.includes('/Animal-Medicine')
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -44,7 +52,8 @@ const Popup = () => {
         <form>
           <div className="popupFormHeader">
             <div className="wrapper">
-              <h2>Human Medicine</h2>
+            {!name &&(<h2>Human Medicine</h2>)}
+            {name &&(<h2>Animal Medicine</h2>)}
               <GrClose onClick={handlePopupClose} size={30} className='closeIcon'/>
             </div>
           </div>

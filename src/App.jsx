@@ -26,13 +26,13 @@ const router = createBrowserRouter(
       <Route index element={<Login/>} />
       <Route element={<Navbar/>}>
         <Route path="Home" element={<Dashboard/>} />
-        <Route path="Human-Medicine" element={<HumanWrap/>}>
-          <Route index element={<AvailStock/>} />
+        <Route element={<HumanWrap/>}>
+          <Route path="Human-Medicine" element={<AvailStock/>} />
           <Route path="Items-Sold" element={<ItemSold/>} />
           <Route path="Expired" element={<Expired/>} />
         </Route>
-        <Route path="Animal-Medicine" element={<AnimalWrap/>} >
-          <Route index element={<AvailableStock/>} />
+        <Route  element={<AnimalWrap/>} >
+          <Route path="Animal-Medicine" element={<AvailableStock/>} />
           <Route path="Items-Sold" element={<ItemsSold/>} />
           <Route path="Expired" element={<ExpiredMeds/>} />
         </Route>
