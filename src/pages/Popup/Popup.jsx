@@ -11,6 +11,9 @@ import Packs from "./PopupFields/Packs";
 import Tablets from "./PopupFields/Tablets";
 
 const Popup = () => {
+  const tosinToken = localStorage.getItem('user');
+  const token = JSON.parse(tosinToken);
+
   const { showPopup, setShowPopup, handleClick, handleTypeChange, quantity_type, setQuantity_type } = useContext(PopupContext);
 
   // ALL FIELDS
@@ -20,7 +23,7 @@ const Popup = () => {
   const [pack, setPack] = useState();
   const [card, setCard] = useState();
   const [tablet, setTablet] = useState();
-  const [Total_pieces, setTotal_pieces] = useState(2);
+  const [Total_pieces, setTotal_pieces] = useState(20);
   const [weight, setWeight] = useState('');
   const [price, setPrice] = useState();
   const [expiryDate, setExpiryDate] = useState('');
@@ -52,6 +55,45 @@ const Popup = () => {
       );
     } else {
       return null;
+    }
+  }
+
+  const handleStockAdd = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token.token}`,
+        },
+        body: JSON.stringify({
+          name,
+          quantity_type,
+          carton,
+          Reminder,
+          pack,
+          card,
+          tablet,
+          Total_pieces,
+          weight,
+          price,
+          expiryDate
+        }),
+      });
+      const data = await response.json()
+      if (response.ok) {
+        console.log(data);
+      } else if (response.status === 401) {
+        console.log(data);
+      } else if (response.status === 404) {
+        console.log(data);
+      }else{
+        console.log(data, 'could not add stock');
+      }
+    }
+    catch (error) {
+      console.log('Topins error', error);
     }
   }
 
@@ -92,7 +134,7 @@ const Popup = () => {
                   </div>
                 )}
             </div>
-            <button>Done</button>
+            <button onClick={handleStockAdd} >Done</button>
           </div>
         </form>
       </div>

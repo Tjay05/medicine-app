@@ -26,16 +26,9 @@ const Login = () => {
       setData(data);
       if (response.ok) {
         history('/Home');
-        // localStorage.setItem('patient', JSON.stringify({
-        //   firstname: data.firstname,
-        //   lastname: data.lastname,
-        //   email: data.email,
-        //   id: data.id,
-        //   _id: data._id,
-        //   dob: data.DOB,
-        //   gender: data.Gender,
-        //   nhis: data.NHIS
-        // }));
+        localStorage.setItem('user', JSON.stringify({
+          token: data
+        }))
         // setIsLoading(false)
       } else if(response.status === 401) {
           setData(data);
