@@ -5,8 +5,21 @@ import humanMed from '../assets/icons/hmuanMeds.svg';
 import reciept from '../assets/icons/reciept.svg';
 import employee from '../assets/icons/employees.svg';
 import { Outlet, NavLink } from 'react-router-dom'
+import { createContext, useState } from 'react';
 
+const PopupContext = createContext();
 const Navbar = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedType, setSelectedType] = useState('');
+  const handleClick = () => setShowPopup(!showPopup);
+  const handleTypeChange = (e) => setSelectedType(e.target.value);
+
+  const popupContextValue = {
+    showPopup, setShowPopup,
+    selectedType, setSelectedType,
+    handleClick, handleTypeChange
+  }
+
   return ( 
     <>
       <main className='navbarContent'>
@@ -41,7 +54,9 @@ const Navbar = () => {
           </nav>
         </aside>
         <section className='content'>
-          <Outlet/>
+          <PopupContext.Provider value={popupContextValue}>
+            <Outlet/>
+          </PopupContext.Provider>
         </section>
       </main>
     </>
@@ -49,3 +64,4 @@ const Navbar = () => {
 }
  
 export default Navbar;
+export { PopupContext };
