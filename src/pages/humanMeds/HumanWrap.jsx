@@ -1,5 +1,4 @@
 import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { GrClose } from "react-icons/gr";
 
 // Pic Imports
 import search from '../../assets/icons/search.svg';
