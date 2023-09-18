@@ -22,7 +22,7 @@ const Tablets = (
         <input 
           type="number" id='piece' 
           value={tablet}
-          onChange={(e) => setTablet(e.target.value)}
+          onChange={(e) => setTablet(Number(e.target.value))}
         /><br />
         <label htmlFor="weight">Net weight (gm/ml)s</label><br />
         <input 
@@ -30,12 +30,6 @@ const Tablets = (
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         /><br />
-        <label htmlFor="price">Price NGN</label><br />
-        <input 
-          type="number" id="price" 
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
       </div>
       <div className="secondForm">
         <label htmlFor="reminder">Set Timer (Reminder)</label><br />
@@ -47,13 +41,17 @@ const Tablets = (
         {/* <select id="reminder">
           <option value="">Remind on Tue</option>
         </select> */}
-        <label htmlFor="total">Total tablets</label><br />
-        <input disabled type="number" id="total" />
         <label htmlFor="date">Expiry Date</label><br />
         <input 
           type="month" id="date" 
           value={expiryDate}
           onChange={(e) => setExpiryDate(e.target.value)}
+        />
+        <label htmlFor="price">Price NGN</label><br />
+        <input 
+          type="number" id="price" 
+          value={price}
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
       </div>
     </>

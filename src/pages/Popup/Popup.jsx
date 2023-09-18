@@ -23,7 +23,7 @@ const Popup = () => {
   const [pack, setPack] = useState();
   const [card, setCard] = useState();
   const [tablet, setTablet] = useState();
-  const [Total_pieces, setTotal_pieces] = useState(20);
+  const [Total_pieces, setTotal_pieces] = useState();
   const [weight, setWeight] = useState('');
   const [price, setPrice] = useState();
   const [expiryDate, setExpiryDate] = useState('');
@@ -60,7 +60,7 @@ const Popup = () => {
 
   const handleStockAdd = async (e) => {
     e.preventDefault();
-    console.log('Clicked');
+    console.log( tablet);
     try {
       const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
         method: 'POST',
@@ -73,10 +73,10 @@ const Popup = () => {
           quantity_type,
           carton,
           Reminder,
-          pack,
-          card,
-          tablet,
-          Total_pieces,
+          pack: quantity_type === 'pack' ? pack : carton*pack,
+          card: quantity_type === 'card' ? card : quantity_type === 'pack' ? pack*card : carton*pack*card,
+          tablet: quantity_type === 'tablet' ? tablet : quantity_type === 'card' ? card*tablet : quantity_type === 'pack' ? pack*card*tablet : carton*pack*card*tablet,
+          Total_pieces: quantity_type === 'tablet' ? tablet : quantity_type === 'card' ? card*tablet : quantity_type === 'pack' ? pack*card*tablet : carton*pack*card*tablet,
           weight,
           price,
           expiryDate
@@ -84,8 +84,7 @@ const Popup = () => {
       });
       const data = await response.json()
       if (response.ok) {
-        window.location.reload()
-        console.log(data);
+        window.location.reload();
       } else if (response.status === 401) {
         console.log(data);
       } else if (response.status === 404) {

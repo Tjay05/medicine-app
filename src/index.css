@@ -431,7 +431,7 @@ nav.meds a.active {
 
 /* Main Available Stock */
 main.wrapper .availableStock {
-  margin-block-end: 2rem;
+  margin-block-end: 4rem;
   font-family: var(--lato);
   color: var(--font-dark-blue);
 }

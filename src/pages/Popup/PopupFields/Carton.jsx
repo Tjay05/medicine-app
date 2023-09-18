@@ -65,8 +65,6 @@ const Carton = (
           value={tablet} 
           onChange={(e) => setTablet(Number(e.target.value))}
           /><br />
-        <label htmlFor="total">Total Tablets</label><br />
-        <input disabled value={Total_pieces} type="number" id="total" />
         <label htmlFor="price">Price NGN</label><br />
         <input 
           type="number" id="price" 

@@ -22,13 +22,13 @@ const Packs = (
         <input 
           type="number" id='pack' 
           value={pack}
-          onChange={(e) => setPack(e.target.value)}
+          onChange={(e) => setPack(Number(e.target.value))}
         /><br />
         <label htmlFor="pertablets">Num. of tablets per card</label><br />
         <input 
           type="number" id='pertablets' 
           value={tablet}
-          onChange={(e) => setTablet(e.target.value)}
+          onChange={(e) => setTablet(Number(e.target.value))}
         /><br />
         <label htmlFor="weight">Net weight (gm/ml)s</label><br />
         <input 
@@ -36,12 +36,6 @@ const Packs = (
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         /><br />
-        <label htmlFor="price">Price NGN</label><br />
-        <input 
-          type="number" id="price" 
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
       </div>
       <div className="secondForm">
         <label htmlFor="reminder">Set Timer (Reminder)</label><br />
@@ -59,13 +53,17 @@ const Packs = (
           value={card}
           onChange={(e) => setCard(e.target.value)}
         /><br />
-        <label htmlFor="total">Total Tablets</label><br />
-        <input disabled type="number" id="total" />
         <label htmlFor="date">Expiry Date</label><br />
         <input 
           type="month" id="date" 
           value={expiryDate}
           onChange={(e) => setExpiryDate(e.target.value)}
+        />
+        <label htmlFor="price">Price NGN</label><br />
+        <input 
+          type="number" id="price" 
+          value={price}
+          onChange={(e) => setPrice(Number(e.target.value))}
         />
       </div>
     </>
