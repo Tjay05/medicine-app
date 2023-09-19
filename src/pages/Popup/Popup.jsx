@@ -13,19 +13,21 @@ import Tablets from "./PopupFields/Tablets";
 const Popup = () => {
   const tosinToken = localStorage.getItem('user');
   const token = JSON.parse(tosinToken);
+  
+  const [loading, setLoading] = useState(false);
 
   const { showPopup, setShowPopup, handleClick, handleTypeChange, quantity_type, setQuantity_type } = useContext(PopupContext);
 
   // ALL FIELDS
   const [name, setName] = useState('');
   const [Reminder, setReminder] = useState('');
-  const [carton, setCarton] = useState();
-  const [pack, setPack] = useState();
-  const [card, setCard] = useState();
-  const [tablet, setTablet] = useState();
-  const [Total_pieces, setTotal_pieces] = useState();
+  const [carton, setCarton] = useState(0);
+  const [pack, setPack] = useState(0);
+  const [card, setCard] = useState(0);
+  const [tablet, setTablet] = useState(0);
+  const [Total_pieces, setTotal_pieces] = useState(0);
   const [weight, setWeight] = useState('');
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState(0);
   const [expiryDate, setExpiryDate] = useState('');
   
   const location = useLocation();
@@ -60,7 +62,7 @@ const Popup = () => {
 
   const handleStockAdd = async (e) => {
     e.preventDefault();
-    console.log( tablet);
+    setLoading(true);
     try {
       const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
         method: 'POST',
@@ -85,21 +87,34 @@ const Popup = () => {
       const data = await response.json()
       if (response.ok) {
         window.location.reload();
+        setLoading(false);
       } else if (response.status === 401) {
         console.log(data);
+        setLoading(false);
       } else if (response.status === 404) {
         console.log(data);
+        setLoading(false);
       }else{
         console.log(data, 'could not add stock');
+        setLoading(false);
       }
     }
     catch (error) {
       console.log('Topins error', error);
+      setLoading(false);
     }
   }
 
   return ( 
     <>
+      {loading && <div className="overwrap">
+        <div className="stephLoader">
+          Loading
+          <div className="loadContainer">
+            <div className={`blueLoader ${loading ? 'loading' : ''}`}></div>
+          </div>
+        </div>
+      </div>}
       <button onClick={handleClick}>Add new</button>
       { showPopup && (
         <div className="popupForm">
