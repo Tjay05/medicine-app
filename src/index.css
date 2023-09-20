@@ -75,6 +75,13 @@ input:focus {
 }
 
 /* Loader Styles */
+.loaded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 4rem;
+}
+
 .overwrap {
   background-color: hsla(0, 1%, 39%, .7 );
   z-index: 900;
@@ -115,10 +122,10 @@ input:focus {
   transition: width 0.3s ease-in-out;
 }
 
-.blueLoader.loading {
-  width: 100%;
-  transition: width 0.3s ease-in-out;
-}
+/* .blueLoader.loading {
+  width: 70%;
+  transition: width 4s ease-in-out;
+} */
 
 /* Desktop Styles */
 /* Login Styles */

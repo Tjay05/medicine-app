@@ -15,6 +15,7 @@ const Popup = () => {
   const token = JSON.parse(tosinToken);
   
   const [loading, setLoading] = useState(false);
+  const [loadNum, setLoadNum] = useState(0);
 
   const { showPopup, setShowPopup, handleClick, handleTypeChange, quantity_type, setQuantity_type } = useContext(PopupContext);
 
@@ -64,6 +65,7 @@ const Popup = () => {
     e.preventDefault();
     setLoading(true);
     try {
+      setLoadNum(40);
       const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
         method: 'POST',
         headers: {
@@ -84,6 +86,7 @@ const Popup = () => {
           expiryDate
         }),
       });
+      setLoadNum(70);
       const data = await response.json()
       if (response.ok) {
         window.location.reload();
@@ -91,6 +94,7 @@ const Popup = () => {
       } else if (response.status === 401) {
         console.log(data);
         setLoading(false);
+        setLoadNum(100)
       } else if (response.status === 404) {
         console.log(data);
         setLoading(false);
@@ -111,7 +115,7 @@ const Popup = () => {
         <div className="stephLoader">
           Loading
           <div className="loadContainer">
-            <div className={`blueLoader ${loading ? 'loading' : ''}`}></div>
+            <div className='blueLoader' style={{width: `${loadNum}%`}}></div>
           </div>
         </div>
       </div>}
