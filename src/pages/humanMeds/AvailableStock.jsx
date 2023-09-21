@@ -26,22 +26,22 @@ const AvailStock = () => {
           <>
             {filteredData.length > 0 ? (
               filteredData.map ((drug) => (
-              <div className="stockDetails" key={drug._id}>
-                <p>{drug.name}</p>
-                <p>{drug.quantity_type}</p>
-                <p>
-                  {drug.quantity_type==='carton' ? drug.carton : drug.quantity_type==='pack' ? drug.pack : drug.quantity_type==='card' ? drug.card : drug.tablet}
-                </p>
-                <p>₦ {drug.price}</p>
-                <div className="date">
-                  <p>{drug.expiryDate}</p>
-                  <GrEdit/>
+                <div className="stockDetails" key={drug._id}>
+                  <p>{drug.name}</p>
+                  <p>{drug.quantity_type}</p>
+                  <p>
+                    {drug.quantity_type==='carton' ? drug.carton : drug.quantity_type==='pack' ? drug.pack : drug.quantity_type==='card' ? drug.card : drug.tablet}
+                  </p>
+                  <p>₦ {drug.price}</p>
+                  <div className="date">
+                    <p>{drug.expiryDate}</p>
+                    <GrEdit/>
+                  </div>
                 </div>
-              </div>
               )
-            )) : (
-              <p className="notFound">Drug not found</p>
-            )
+              )) : (
+                <p className="notFound">Drug not available!!!</p>
+              )
             }
           </>
         )}

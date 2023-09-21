@@ -63,6 +63,13 @@ input:focus {
   outline: none;
 }
 
+.notFound {
+  text-align: center;
+  margin-block: 4rem;
+  font-size: 1.2rem;
+  color: red;
+}
+
 /* Utility Styles */
 .container {
   width: 70%;
@@ -122,13 +129,6 @@ input:focus {
   transition: width 0.3s ease-in-out;
 }
 
-/* .blueLoader.loading {
-  width: 70%;
-  transition: width 4s ease-in-out;
-} */
-
-/* Desktop Styles */
-/* Login Styles */
 .loginMain {
   width: 100vw;
   height: 100vh;
