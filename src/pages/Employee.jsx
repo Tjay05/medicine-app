@@ -19,6 +19,7 @@ const Employee = () => {
   const notifClicked = () => {
     history('../Notifications')
   }
+  
   return (
     <>
       <header>

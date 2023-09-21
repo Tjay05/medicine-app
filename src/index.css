@@ -558,3 +558,43 @@ main.receipt {
 main.receipt .receiptWrapper {
   width: 68%;
 }
+
+/* Cashier pAges */
+/* Sales */
+main.wrapper.cashierSales {
+  margin-block: 3rem;
+}
+
+main.wrapper.cashierSales .availableStock .stockHead > p:first-child {
+  min-width: 150px;
+}
+
+main.wrapper.cashierSales .availableStock .stockHead > p:nth-child(2), .cashierSales .availableStock .stockHead > p:nth-child(3), .cashierSales .availableStock .stockHead > p:nth-child(4) {
+  max-width: 105px;
+}
+
+main.wrapper.cashierSales .availableStock .stockDetails p:first-child {
+  min-width: 150px;
+}
+
+main.wrapper.cashierSales .availableStock .stockDetails > p:nth-child(2), .cashierSales .availableStock .stockDetails > p:nth-child(3), .cashierSales .availableStock .stockDetails > p:nth-child(4) {
+  max-width: 105px;
+}
+
+
+main.wrapper.cashierSales .availableStock .stockHead p:last-child {
+  max-width: 90px;
+}
+
+main.wrapper.cashierSales .availableStock .stockDetails button {
+  background: var(--active-lite-blue);
+  border: none;
+  text-align: center;
+  max-width: 90px;
+  margin-inline-end: 1rem;
+  padding-block: .5rem;
+  font-family: var(--lato);
+  font-weight: 400;
+  color: white;
+  border-radius: 5px;
+}
