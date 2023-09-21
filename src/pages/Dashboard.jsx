@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 // Pic Imports
@@ -5,10 +6,29 @@ import notification from '../assets/icons/notification.svg'
 import search from '../assets/icons/search.svg'
 
 const Dashboard = () => {
+  const [data, setData] = useState([]);
   const history = useNavigate();
-  const notifClicked = () => {
-    history('../Notifications')
-  }
+  const tosinToken = localStorage.getItem('user');
+  const token = JSON.parse(tosinToken);
+
+  useEffect( () => {
+      const fetchData = async () => {
+        try {
+          const res = await fetch('https://nvmri.onrender.com/user/all/drugs', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token.token}`,
+            },
+          });
+          const data = await res.json();
+          setData(data);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      fetchData();
+    }, [])
 
   return ( 
     <>
@@ -16,14 +36,14 @@ const Dashboard = () => {
         <div className="headerWrap">
           <nav className="topHeader">
             <h1>Dashboard</h1>
-            <img onClick={notifClicked} src={notification} alt="Bell Icon" />
+            <img onClick={() => history('../Notifications')} src={notification} alt="Bell Icon" />
           </nav>
         </div>
       </header>
       <main className="dash wrapper">
         <article onClick={() => history('../Human-Medicine')}>
           <p>Human Medicines</p>
-          <p className='numAvailable'>7</p>
+          <p className='numAvailable'>{data.length}</p>
         </article>
         <article onClick={() => history('../Animal-Medicine')}>
           <p>Animal Medicines</p>
