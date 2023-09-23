@@ -2,7 +2,8 @@
 import medCare from '../assets/images/undraw_medical_care_movn.png'
 import logo from '../assets/icons/logo.svg'
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useJwt } from 'react-jwt';
 
 const Login = () => {
   const [id, setId] = useState('');
@@ -25,10 +26,11 @@ const Login = () => {
       const data = await response.json()
       setData(data);
       if (response.ok) {
-        history('/Home');
+        setData(data);
         localStorage.setItem('user', JSON.stringify({
           token: data
         }))
+        tokenValidation();
         // setIsLoading(false)
       } else if(response.status === 401) {
           setData(data);
@@ -44,6 +46,23 @@ const Login = () => {
     catch (error) {
       console.log("Topins' Error:", error);
       // setIsLoading(false)
+    }
+  }
+
+  const {decodedToken} = useJwt(data);
+
+  useEffect(() => {
+    if (decodedToken) {
+      tokenValidation();
+    }
+  }, [decodedToken]);
+
+  const tokenValidation = () => {
+    console.log(decodedToken);
+    if (decodedToken.role === 'admin') {
+      history('/Home')
+    } else {
+      history('/Sales')
     }
   }
 
