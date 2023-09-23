@@ -88,7 +88,7 @@ const Login = () => {
                 placeholder='ID No.' 
                 type="text" 
               />
-              <p className="err-mssg">{data}</p>
+              <p style={data === decodedToken ?{ display: 'none'} : {display: 'inline-block'}} className="err-mssg">{data}</p>
               <button onClick={handleLogin} type='submit'>Continue</button>
             </form>
           </div>

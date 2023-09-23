@@ -157,9 +157,9 @@ const Employee = () => {
           {data.map((employee)=>(
             <div className="stockDetails" key={employee.id}>
               <p>{employee.name}</p>
-              <p>stellagadi@gmail.com</p>
-              <p>08012345678</p>
-              <p>12345HG</p>
+              <p>{employee.email}</p>
+              <p>{employee.phone}</p>
+              <p>{employee.id}</p>
               <p>Remove</p>
             </div>
           ))}
