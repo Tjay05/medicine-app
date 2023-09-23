@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 // Pic Imports
-import search from '../../assets/icons/search.svg';
+import searchpic from '../../assets/icons/search.svg';
 import notification from '../../assets/icons/notification.svg';
 import Popup from '../Popup/Popup';
 import { useEffect, useState } from 'react';
@@ -66,7 +66,7 @@ const HumanWrap = () => {
           </nav>
           <div className="bottomHeader tree">
             <div className="searchForm">
-              <img src={search} alt="" />
+              <img src={searchpic} alt="" />
               <input 
                 placeholder='Search' 
                 type="text" 
