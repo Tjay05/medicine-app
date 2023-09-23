@@ -45,7 +45,7 @@ const Login = () => {
     }
     catch (error) {
       console.log("Topins' Error:", error);
-      // setIsLoading(false)
+      setIsLoading(false)
     }
   }
 
