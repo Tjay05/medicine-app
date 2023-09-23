@@ -229,6 +229,8 @@ p.err-mssg {
   font-family: var(--raleway);
   font-weight: 500;
   font-size: 1.05rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* Layout Page */

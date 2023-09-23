@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { GrClose } from "react-icons/gr";
 import { useEffect, useState } from 'react';
+import { ClipLoader } from "react-spinners";
 
 // Pic Imports
 import search from '../assets/icons/search.svg';
@@ -23,6 +24,7 @@ const Employee = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [field, setField] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,7 +59,7 @@ const Employee = () => {
   }
 
   useEffect( () => {
-    //   setIsLoading(true);
+      setIsLoading(true);
       const fetchData = async () => {
         try {
           const res = await fetch('https://nvmri.onrender.com/user/all', {
@@ -69,10 +71,10 @@ const Employee = () => {
           });
           const data = await res.json();
           setData(data);
-          // setIsLoading(false);
+          setIsLoading(false);
         } catch (err) {
           console.log(err);
-          // setIsLoading(false);
+          setIsLoading(false);
         }
       }
       fetchData();
@@ -154,15 +156,23 @@ const Employee = () => {
             <p>ID</p>
             <p>Action</p>
           </div>
-          {data.map((employee)=>(
-            <div className="stockDetails" key={employee.id}>
-              <p>{employee.name}</p>
-              <p>{employee.email}</p>
-              <p>{employee.phone}</p>
-              <p>{employee.id}</p>
-              <p>Remove</p>
+          {isLoading ? (
+            <div className="loaded">
+              <ClipLoader color="#007bff" className="loadImg" loading={isLoading} size={60}/>
             </div>
-          ))}
+          ) : (
+            <>
+              {data.map((employee)=>(
+                <div className="stockDetails" key={employee.id}>
+                  <p>{employee.name}</p>
+                  <p>{employee.email}</p>
+                  <p>{employee.phone}</p>
+                  <p>{employee.id}</p>
+                  <p>Remove</p>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </main>
     </>
