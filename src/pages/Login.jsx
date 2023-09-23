@@ -9,7 +9,7 @@ import { RingLoader } from "react-spinners";
 const Login = () => {
   const [id, setId] = useState('');
   const [data, setData] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useNavigate();
 
