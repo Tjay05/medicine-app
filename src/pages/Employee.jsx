@@ -4,19 +4,19 @@ import { useEffect, useState } from 'react';
 import { ClipLoader } from "react-spinners";
 
 // Pic Imports
-import search from '../assets/icons/search.svg';
+import searchImg from '../assets/icons/search.svg';
 import notification from '../assets/icons/notification.svg';
 
 const Employee = () => {
   const tosinToken = localStorage.getItem('user');
   const token = JSON.parse(tosinToken);
+  const [search, setSearch] = useState('');
   const [data, setData] = useState([]);  
+  const [filteredData, setFilteredData] = useState([]);
 
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleClick = () => {
-    showPopup === false ? setShowPopup(true) : setShowPopup(false)
-  }
+  const handleClick = () => setShowPopup(!showPopup);
 
   const history = useNavigate();
 
@@ -80,6 +80,14 @@ const Employee = () => {
       fetchData();
     }, [])
   
+  useEffect(() => {
+    const searchLetters = search.toLowerCase().split(' ');
+    const filteredStaffs = data.filter((newEmployee) => {
+      const employeeName = `${newEmployee.name}`.toLowerCase();
+      return searchLetters.every((letter) => employeeName.includes(letter));
+    });
+    setFilteredData(filteredStaffs);
+  }, [search, data]);
   
   return (
     <>
@@ -91,8 +99,12 @@ const Employee = () => {
           </nav>
           <div className="bottomHeader tree">
             <div className="searchForm">
-              <img src={search} alt="" />
-              <input placeholder='Search' type="text" />
+              <img src={searchImg} alt=""/>
+              <input
+                placeholder='Search' type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </div>
             <button onClick={handleClick}>Add new</button>
             { showPopup && (
@@ -162,15 +174,20 @@ const Employee = () => {
             </div>
           ) : (
             <>
-              {data.map((employee)=>(
-                <div className="stockDetails" key={employee.id}>
-                  <p>{employee.name}</p>
-                  <p>{employee.email}</p>
-                  <p>{employee.phone}</p>
-                  <p>{employee.id}</p>
-                  <p>Remove</p>
-                </div>
-              ))}
+              {filteredData.length > 0 ? (
+                filteredData.map((employee)=> (
+                  <div className="stockDetails" key={employee.id}>
+                    <p>{employee.name}</p>
+                    <p>{employee.email}</p>
+                    <p>{employee.phone}</p>
+                    <p>{employee.id}</p>
+                    <p>Remove</p>
+                  </div>
+                )
+                )) : (
+                  <p className="notFound">No employee available!!!</p>
+                )
+              }
             </>
           )}
         </div>

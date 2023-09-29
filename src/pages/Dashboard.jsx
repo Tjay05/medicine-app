@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 
 // Pic Imports
 import notification from '../assets/icons/notification.svg'
-import search from '../assets/icons/search.svg'
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
