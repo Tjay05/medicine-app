@@ -606,4 +606,5 @@ main.wrapper.cashierSales .availableStock .stockDetails button {
 .n.streak {
   background: transparent;
   color: #007bff;
+  font-size: 2rem;
 }
