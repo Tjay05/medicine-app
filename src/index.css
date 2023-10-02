@@ -555,11 +555,123 @@ main.wrapper.employee .availableStock .stockDetails p:last-child {
 
 /* Receipt */
 main.receipt {
+  display: flex;
   margin-block: 3rem;
+  gap: 2rem;
 }
 
 main.receipt .receiptWrapper {
   width: 68%;
+}
+
+/* Receipt View */
+.recieptView {
+  width: 30%;
+  border-radius: 10px;
+  border: 10px solid var(--light-ash-bg-search);
+  text-align: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: .8rem;
+}
+
+.receipt .recieptView header {
+  position: unset;
+  top: unset;
+  padding-block-start: unset;
+  background-color: unset;
+  box-shadow: unset;
+  border: unset;
+}
+
+.receipt .recieptView header h1 {
+  margin-block-end: .4rem;
+  text-transform: uppercase;
+  font-family: var(--open-sans);
+  font-weight: 600;
+}
+
+.receipt .recieptView header p {
+  margin-block-end: .3rem;
+  font-family: var(--lato);
+}
+
+.receipt .recieptView h2 {
+  border-block: 2px dotted black;
+  width: 100%;
+  margin-block: 1rem .5rem;
+  padding: 0.3rem;
+  font-family: var(--lato);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.recieptView section table {
+  font-family: var(--lato);
+  font-weight: 500;
+}
+
+.recieptView section table tbody tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .5rem;
+  gap: 2rem;
+  margin-block-end: .4rem;
+}
+
+.recieptView section table tbody .tableFooter {
+  border-block: 2px dotted black;
+  padding-block-start: .5rem;
+}
+
+.receipt .recieptView h3 {
+  font-family: var(--open-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-block: .8rem;
+}
+
+.receipt .recieptView button {
+  align-self: flex-end;
+  border: none;
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  background-color: var(--login-navy-blue);
+}
+
+@media print {
+  .recieptView {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: unset;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .recieptView header h1 {
+    margin-block-end: .6rem;
+    text-transform: uppercase;
+  }
+
+  .recieptView h2 {
+    border-block: 2px dotted black;
+    width: 100%;
+    margin-block: 1rem .5rem;
+    padding: 0.3rem;
+  }
 }
 
 /* Cashier pAges */
@@ -600,11 +712,4 @@ main.wrapper.cashierSales .availableStock .stockDetails button {
   font-weight: 400;
   color: white;
   border-radius: 5px;
-}
-
-/* When Im not around */
-.n.streak {
-  background: transparent;
-  color: #007bff;
-  font-size: 2rem;
 }
