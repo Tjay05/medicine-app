@@ -620,7 +620,7 @@ main.receipt .receiptWrapper {
   align-items: center;
   justify-content: space-between;
   font-size: .5rem;
-  gap: 2rem;
+  gap: 3rem;
   margin-block-end: .4rem;
 }
 
