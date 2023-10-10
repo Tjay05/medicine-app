@@ -37,7 +37,7 @@ const MyDocument = () => {
               <td>₦ 1000</td>
             </tr>
             <tr>
-              <td>Nise Syrup</td>
+              <td>Nice Syrup</td>
               <td>2</td>
               <td>₦ 1000</td>
             </tr>
