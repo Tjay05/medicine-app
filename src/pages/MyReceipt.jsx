@@ -38,7 +38,7 @@ const MyDocument = () => {
             </tr>
             <tr>
               <td>Nice Syrup</td>
-              <td>2</td>
+              <td>21</td>
               <td>₦ 1000</td>
             </tr>
             <div className="tableFooter">
