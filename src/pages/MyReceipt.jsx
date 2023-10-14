@@ -44,7 +44,7 @@ const MyDocument = () => {
             <div className="tableFooter">
               <tr>
                 <td>TOTAL</td>
-                <td>₦ 2000</td>
+                <td>₦ 1100</td>
               </tr>
             </div>
           </tbody>
