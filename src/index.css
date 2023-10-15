@@ -662,7 +662,7 @@ main.receipt .receiptWrapper {
   }
 
   .recieptView section .topTable {
-    border-block-start: 2px dotted hsl(0, 0%, 0%);
+    border-block-start: 2px dotted #000000;
     margin-block-start: 1rem;
   }
   
