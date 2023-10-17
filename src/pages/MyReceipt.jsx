@@ -53,7 +53,7 @@ const MyDocument = () => {
     </section>
     <h3>THANK YOU!</h3>
     <ReactToPrint 
-      trigger={() => <button style={{backgroundColor: '#003366', color: 'white', border: 'none', padding: '.5rem 1rem', borderRadius: '5px', marginBlockStart: '.8rem'}}>Print me</button>}
+      trigger={() => <button style={{backgroundColor: '#003366', color: 'white', border: 'none', padding: '.5rem 1rem', borderRadius: '5px', marginBlockStart: '.8rem'}}>Print</button>}
       content={() => componentRef.current}
     />
    </div>
