@@ -358,15 +358,15 @@ section.content header .headerWrap .bottomHeader.tree button {
   color: var(--white);
   border: none;
   border-radius: 5px;
-  padding: 1rem 2rem;
-  max-height: 53px;
+  padding: .7rem 2rem;
+  max-height: 43px;
 }
 
 /* PopupForm */
 .popupForm {
   position: absolute;
   top: 90px;
-  width: 400px;
+  width: max(400px, 30%);
   right: -20px;
   transform: translateX(-10%);
   background-color: #fff;
@@ -391,7 +391,7 @@ section.content header .headerWrap .bottomHeader.tree button {
 .popupForm form .popupFormHeader h2 {
   font-family: var(--lato);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
 }
 
 .popupForm form .popupFormHeader .closeIcon {
@@ -412,7 +412,7 @@ section.content header .headerWrap .bottomHeader.tree button {
 .popupForm form .formField input:first-child {
   width: 100%;
   border: none;
-  font-size: 1.2rem;
+  font-size: clamp(.9rem, 1.2vw, 2.4rem);
   padding-block-end: .2rem;
   border-bottom: 1px solid hsla(0, 0%, 65%, 1);
 }
@@ -420,19 +420,20 @@ section.content header .headerWrap .bottomHeader.tree button {
 .popupForm form .formField .twoForms {
   display: flex;
   margin-block: 1rem;
-  font-size: 0.9rem;
+  font-size: clamp(.8rem, 1vw, 1.5rem);
   justify-content: space-between;
   gap: 1.5rem;
   width: 100%;
 }
 
 .popupForm form .formField .twoForms input, .twoForms select {
-  margin-block: .5rem .8rem;
+  margin-block: .5rem .6rem;
   color: black;
   border: none;
   width: 100%;
   border-radius: 5px;
   padding: .6rem .5rem;
+  font-size: clamp(.4rem, .8vw, 1.2rem);
   font-family: inherit;
   font-weight: inherit;
   border: 1px solid var(--login-navy-blue);
@@ -477,7 +478,7 @@ nav.meds {
   margin-block: 2rem;
   font-family: var(--roboto);
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 1.2vw, 2.1rem);
 }
 
 nav.meds a {
@@ -502,7 +503,7 @@ main.wrapper .availableStock .stockHead {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.3vw, 2rem);
 }
 
 main.wrapper .availableStock .stockHead > * {
@@ -514,7 +515,7 @@ main.wrapper .availableStock .stockDetails {
   align-items: center;
   margin-block: 2rem;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.15vw, 2.2rem);
   padding-block: 1rem .5rem;
   border-bottom: 1px solid var(--black);
 }
@@ -532,7 +533,7 @@ main.wrapper .availableStock .stockDetails .date {
 main.notification.wrapper {
   font-family: var(--lato);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1.3vw, 2.4rem);
   color: var(--font-dark-blue);
   margin-block: 2rem;
 }
@@ -548,6 +549,7 @@ main.notification .notification-preview {
 
 main.notification .notification-preview img {
   margin-inline-end: 1rem;
+  width: 4%;
 }
 
 /* Employee Page */
@@ -572,7 +574,8 @@ main.receipt .receiptWrapper {
 
 /* Receipt View */
 .recieptView {
-  width: 30%;
+  width: min(30%, 360px);
+  margin-inline: auto;
   border-radius: 10px;
   border: 10px solid var(--light-ash-bg-search);
   text-align: center;
@@ -582,7 +585,7 @@ main.receipt .receiptWrapper {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  font-size: .8rem;
+  font-size: clamp(.8rem, 1.1vw, 2rem);
 }
 
 .receipt .recieptView header {
@@ -604,6 +607,7 @@ main.receipt .receiptWrapper {
 .receipt .recieptView header p {
   margin-block-end: .3rem;
   font-family: var(--lato);
+  font-size: clamp(.7rem, 1vw, 1.5rem);
 }
 
 .receipt .recieptView h2 {
@@ -613,7 +617,7 @@ main.receipt .receiptWrapper {
   padding: 0.3rem;
   font-family: var(--lato);
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: clamp(.8rem, 1.1vw, 2rem);
 }
 
 .recieptView section table {
@@ -625,7 +629,7 @@ main.receipt .receiptWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: .5rem;
+  font-size: clamp(.5rem, .6vw, 1rem);
   gap: 3rem;
   margin-block-end: .4rem;
 }
@@ -648,7 +652,7 @@ main.receipt .receiptWrapper {
   color: var(--white);
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  font-size: 0.7rem;
+  font-size: clamp(.7rem, .7vw, 1.4rem);
   background-color: var(--login-navy-blue);
 }
 
