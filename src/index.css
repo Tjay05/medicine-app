@@ -306,7 +306,7 @@ section.content header .headerWrap nav.topHeader {
   justify-content: space-between;
   align-items: center;
   margin-block: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.5vw, 3rem);
   font-family: var(--open-sans);
   font-weight: 600;
   color: var(--black);
@@ -314,6 +314,7 @@ section.content header .headerWrap nav.topHeader {
 
 section.content header .headerWrap nav.topHeader img {
   cursor: pointer;
+  width: 3%;
 }
 
 section.content header .headerWrap .bottomHeader {
@@ -335,6 +336,7 @@ header .headerWrap .bottomHeader .searchForm {
 header .headerWrap .bottomHeader .searchForm input {
   font-family: var(--roboto);
   font-weight: 400;
+  font-size: clamp(1rem, 1vw, 2rem);
   border: none;
   border-radius: 8px;
   padding-inline: 1rem;
@@ -352,11 +354,12 @@ section.content header .headerWrap .bottomHeader.tree button {
   background-color: var(--login-navy-blue);
   font-family: var(--raleway);
   font-weight: 500;
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
   color: var(--white);
   border: none;
   border-radius: 5px;
-  padding-inline: 2rem;
-  height: 35px;
+  padding: 1rem 2rem;
+  max-height: 53px;
 }
 
 /* PopupForm */
@@ -445,7 +448,7 @@ main.dash {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin-block: 6rem;
+  height: 80%;
   font-family: var(--lato);
 }
 
@@ -458,7 +461,7 @@ main.dash article {
   font-weight: 600;
   background-color: var(--light-ash-bg-search);
   border-radius: 10px;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 1.5vw, 2.5rem);
   cursor: pointer;
 }
 
