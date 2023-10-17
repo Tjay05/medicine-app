@@ -66,7 +66,7 @@ input:focus {
 .notFound {
   text-align: center;
   margin-block: 4rem;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 1.5vw, 2.4rem);
   color: red;
 }
 
@@ -153,6 +153,7 @@ input:focus {
 .loginMain aside p {
   font-weight: 500;
   font-family: var(--lato);
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
   color: var(--white);
   text-align: center;
 }
@@ -161,13 +162,15 @@ input:focus {
   width: 35%;
   height: 100%;
   margin-inline: auto;
-  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .loginMain section nav {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 1rem;
   margin-block-end: 8rem;
 }
 
@@ -175,7 +178,7 @@ input:focus {
   color: var(--login-navy-blue);
   font-family: Arial, sans-serif;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.3vw, 2.4rem);
 }
 
 .loginMain section .loginBody {
@@ -187,13 +190,13 @@ input:focus {
 .loginMain section .loginBody h1 {
   font-weight: 600;
   font-family: var(--open-sans);
-  font-size: 1.6rem;
-  margin-block-end: 1rem;
+  font-size: clamp(2rem, 2vw, 4rem);
+  margin-block-end: 2rem;
 }
 
 .loginMain section .loginBody p {
   font-family: var(--roboto);
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
 }
 
 .loginMain section .loginBody form {
@@ -208,7 +211,7 @@ input:focus {
   border-bottom: 2px solid hsla(0, 0%, 65%, 1);
   font-family: var(--lato);
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.3vw, 2.4rem);
   height: 40px;
   color: var(--font-dark-blue);
 }
@@ -218,6 +221,7 @@ p.err-mssg {
   font-style: italic;
   color: red;
   font-weight: 800;
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
 }
 
 .loginMain section .loginBody form button {
@@ -228,7 +232,7 @@ p.err-mssg {
   background-color: var(--login-navy-blue);
   font-family: var(--raleway);
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
   display: flex;
   justify-content: center;
 }
@@ -255,13 +259,13 @@ aside.nav nav ul {
   color: var(--white);
   font-family: var(--roboto);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
 }
 
 aside.nav nav ul li:first-child {
   font-family: Arial, sans-serif;
   margin-block: 3.5rem 2.5rem;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.3vw, 2.4rem);
 }
 
 aside.nav nav ul li:first-child a img {
@@ -285,7 +289,6 @@ main.navbarContent section.content {
 
 /* Dashboard */
 section.content header {
-  /* position: sticky; */
   top: 0;
   background-color: var(--white);
   padding-block-start: 2rem;
