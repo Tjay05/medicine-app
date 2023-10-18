@@ -428,7 +428,7 @@ section.content header .headerWrap .bottomHeader.tree button {
 
 .popupForm form .formField .twoForms input, .twoForms select {
   margin-block: .5rem .6rem;
-  color: black;
+  color: #000000;
   border: none;
   width: 100%;
   border-radius: 5px;
