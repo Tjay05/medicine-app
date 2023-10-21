@@ -414,7 +414,7 @@ section.content header .headerWrap .bottomHeader.tree button {
   border: none;
   font-size: clamp(.9rem, 1.2vw, 2.4rem);
   padding-block-end: .2rem;
-  border-bottom: 1px solid hsla(0, 0%, 65%, 1);
+  border-bottom: 1px solid #a6a6a6;
 }
 
 .popupForm form .formField .twoForms {
