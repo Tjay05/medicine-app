@@ -482,7 +482,7 @@ nav.meds {
 }
 
 nav.meds a {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ffffff;
   padding: .3rem 1rem;
   color: var(--login-navy-blue);
 }
