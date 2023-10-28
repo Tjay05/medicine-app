@@ -611,7 +611,7 @@ main.receipt .receiptWrapper {
 }
 
 .receipt .recieptView h2 {
-  border-block: 2px dotted hwb(0 0% 100%);
+  border-block: 2px dotted rgb(0, 0, 0);
   width: 100%;
   margin-block: 1rem .5rem;
   padding: 0.3rem;
