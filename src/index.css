@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 /* Root Styles */
 :root {
@@ -16,10 +16,10 @@
   --light-ash-bg-search: hsla(0, 0%, 95%, 1);
 
   /* Font Families */
-  --lato: 'Lato', sans-serif;
-  --open-sans: 'Open Sans', sans-serif;
-  --raleway: 'Raleway', sans-serif;
-  --roboto: 'Roboto', sans-serif;
+  --lato: "Lato", sans-serif;
+  --open-sans: "Open Sans", sans-serif;
+  --raleway: "Raleway", sans-serif;
+  --roboto: "Roboto", sans-serif;
 }
 
 /* Reset Styles */
@@ -29,7 +29,16 @@
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, li {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
 }
@@ -50,7 +59,8 @@ img {
   max-width: 100%;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -90,7 +100,7 @@ input:focus {
 }
 
 .overwrap {
-  background-color: hsla(0, 1%, 39%, .7 );
+  background-color: hsla(0, 1%, 39%, 0.7);
   z-index: 900;
   width: 100%;
   height: 100%;
@@ -105,7 +115,7 @@ input:focus {
 .stephLoader {
   height: 60px;
   background-color: var(--white);
-  padding-block-start: .6rem;
+  padding-block-start: 0.6rem;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -228,7 +238,7 @@ p.err-mssg {
   border-radius: 5px;
   border: none;
   color: white;
-  padding-block: .8rem;
+  padding-block: 0.8rem;
   background-color: var(--login-navy-blue);
   font-family: var(--raleway);
   font-weight: 500;
@@ -275,7 +285,7 @@ aside.nav nav ul li:first-child a img {
 aside.nav nav ul li a {
   display: flex;
   align-items: center;
-  gap: .7rem;
+  gap: 0.7rem;
 }
 
 aside.nav nav ul li a img {
@@ -292,8 +302,8 @@ section.content header {
   top: 0;
   background-color: var(--white);
   padding-block-start: 2rem;
-  border-bottom: .1px solid var(--light-ash-bg-search);
-  box-shadow:  0px 0px 10px 1px rgba(0,0,0,0.1);
+  border-bottom: 0.1px solid var(--light-ash-bg-search);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 section.content header .headerWrap {
@@ -341,7 +351,7 @@ header .headerWrap .bottomHeader .searchForm input {
   border-radius: 8px;
   padding-inline: 1rem;
   width: 450px;
-  padding-block: .6rem ;
+  padding-block: 0.6rem;
   background-color: var(--light-ash-bg-search);
   color: var(--search-placeholder);
 }
@@ -358,7 +368,7 @@ section.content header .headerWrap .bottomHeader.tree button {
   color: var(--white);
   border: none;
   border-radius: 5px;
-  padding: .7rem 2rem;
+  padding: 0.7rem 2rem;
   max-height: 43px;
 }
 
@@ -385,7 +395,7 @@ section.content header .headerWrap .bottomHeader.tree button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: .8rem;
+  padding-block: 0.8rem;
 }
 
 .popupForm form .popupFormHeader h2 {
@@ -397,7 +407,7 @@ section.content header .headerWrap .bottomHeader.tree button {
 .popupForm form .popupFormHeader .closeIcon {
   cursor: pointer;
   background-color: var(--white);
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 50%;
 }
 
@@ -412,34 +422,36 @@ section.content header .headerWrap .bottomHeader.tree button {
 .popupForm form .formField input:first-child {
   width: 100%;
   border: none;
-  font-size: clamp(.9rem, 1.2vw, 2.4rem);
-  padding-block-end: .2rem;
+  font-size: clamp(0.9rem, 1.2vw, 2.4rem);
+  padding-block-end: 0.2rem;
   border-bottom: 1px solid #a6a6a6;
 }
 
 .popupForm form .formField .twoForms {
   display: flex;
   margin-block: 1rem;
-  font-size: clamp(.8rem, 1vw, 1.5rem);
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
   justify-content: space-between;
   gap: 1.5rem;
   width: 100%;
 }
 
-.popupForm form .formField .twoForms input, .twoForms select {
-  margin-block: .5rem .6rem;
+.popupForm form .formField .twoForms input,
+.twoForms select {
+  margin-block: 0.5rem 0.6rem;
   color: rgb(0, 0, 0);
   border: none;
   width: 100%;
   border-radius: 5px;
-  padding: .6rem .5rem;
-  font-size: clamp(.4rem, .8vw, 1.2rem);
+  padding: 0.6rem 0.5rem;
+  font-size: clamp(0.4rem, 0.8vw, 1.2rem);
   font-family: inherit;
   font-weight: inherit;
   border: 1px solid var(--login-navy-blue);
 }
 
-.popupForm form .formField .twoForms .firstForm, .popupForm form .formField .twoForms .secondForm {
+.popupForm form .formField .twoForms .firstForm,
+.popupForm form .formField .twoForms .secondForm {
   width: 50%;
 }
 
@@ -483,7 +495,7 @@ nav.meds {
 
 nav.meds a {
   border-bottom: 2px solid hsl(0, 0%, 100%);
-  padding: .3rem 1rem;
+  padding: 0.3rem 1rem;
   color: var(--login-navy-blue);
 }
 
@@ -516,7 +528,7 @@ main.wrapper .availableStock .stockDetails {
   margin-block: 2rem;
   font-weight: 400;
   font-size: clamp(1rem, 1.15vw, 2.2rem);
-  padding-block: 1rem .5rem;
+  padding-block: 1rem 0.5rem;
   border-bottom: 1px solid var(--black);
 }
 
@@ -542,7 +554,7 @@ main.notification .notification-preview {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: .7rem;
+  padding-block: 0.7rem;
   margin-block: 2rem;
   border-bottom: 1px solid var(--font-dark-blue);
 }
@@ -585,7 +597,7 @@ main.receipt .receiptWrapper {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  font-size: clamp(.8rem, 1.1vw, 2rem);
+  font-size: clamp(0.8rem, 1.1vw, 2rem);
 }
 
 .receipt .recieptView header {
@@ -598,26 +610,26 @@ main.receipt .receiptWrapper {
 }
 
 .receipt .recieptView header h1 {
-  margin-block-end: .4rem;
+  margin-block-end: 0.4rem;
   text-transform: uppercase;
   font-family: var(--open-sans);
   font-weight: 600;
 }
 
 .receipt .recieptView header p {
-  margin-block-end: .3rem;
+  margin-block-end: 0.3rem;
   font-family: var(--lato);
-  font-size: clamp(.7rem, 1vw, 1.5rem);
+  font-size: clamp(0.7rem, 1vw, 1.5rem);
 }
 
 .receipt .recieptView h2 {
   border-block: 2px dotted #000000;
   width: 100%;
-  margin-block: 1rem .5rem;
+  margin-block: 1rem 0.5rem;
   padding: 0.3rem;
   font-family: var(--lato);
   font-weight: 400;
-  font-size: clamp(.8rem, 1.1vw, 2rem);
+  font-size: clamp(0.8rem, 1.1vw, 2rem);
 }
 
 .recieptView section table {
@@ -629,21 +641,21 @@ main.receipt .receiptWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: clamp(.5rem, .6vw, 1rem);
+  font-size: clamp(0.5rem, 0.6vw, 1rem);
   gap: 3rem;
-  margin-block-end: .4rem;
+  margin-block-end: 0.4rem;
 }
 
 .recieptView section table tbody .tableFooter {
   border-block: 2px dotted black;
-  padding-block-start: .5rem;
+  padding-block-start: 0.5rem;
 }
 
 .receipt .recieptView h3 {
   font-family: var(--open-sans);
   font-weight: 600;
   font-size: 0.9rem;
-  margin-block: .5rem;
+  margin-block: 0.5rem;
 }
 
 .receipt .recieptView button {
@@ -652,7 +664,7 @@ main.receipt .receiptWrapper {
   color: var(--white);
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  font-size: clamp(.7rem, .7vw, 1.4rem);
+  font-size: clamp(0.7rem, 0.7vw, 1.4rem);
   background-color: var(--login-navy-blue);
 }
 
@@ -675,7 +687,7 @@ main.receipt .receiptWrapper {
     border-block-start: 2px dotted #000000;
     margin-block-start: 1rem;
   }
-  
+
   .recieptView section table tbody tr {
     display: flex;
     font-size: 2rem;
@@ -684,7 +696,7 @@ main.receipt .receiptWrapper {
     gap: 2rem;
     margin-block-end: 2rem;
   }
-  
+
   .recieptView section table tbody .tableFooter {
     border-block: 2px dotted #000000;
     padding-block-start: 2rem;
@@ -702,7 +714,9 @@ main.wrapper.cashierSales .availableStock .stockHead > p:first-child {
   min-width: 150px;
 }
 
-main.wrapper.cashierSales .availableStock .stockHead > p:nth-child(2), .cashierSales .availableStock .stockHead > p:nth-child(3), .cashierSales .availableStock .stockHead > p:nth-child(4) {
+main.wrapper.cashierSales .availableStock .stockHead > p:nth-child(2),
+.cashierSales .availableStock .stockHead > p:nth-child(3),
+.cashierSales .availableStock .stockHead > p:nth-child(4) {
   max-width: 105px;
 }
 
@@ -710,10 +724,11 @@ main.wrapper.cashierSales .availableStock .stockDetails p:first-child {
   min-width: 150px;
 }
 
-main.wrapper.cashierSales .availableStock .stockDetails > p:nth-child(2), .cashierSales .availableStock .stockDetails > p:nth-child(3), .cashierSales .availableStock .stockDetails > p:nth-child(4) {
+main.wrapper.cashierSales .availableStock .stockDetails > p:nth-child(2),
+.cashierSales .availableStock .stockDetails > p:nth-child(3),
+.cashierSales .availableStock .stockDetails > p:nth-child(4) {
   max-width: 105px;
 }
-
 
 main.wrapper.cashierSales .availableStock .stockHead p:last-child {
   max-width: 90px;
@@ -725,7 +740,7 @@ main.wrapper.cashierSales .availableStock .stockDetails button {
   text-align: center;
   max-width: 90px;
   margin-inline-end: 1rem;
-  padding-block: .5rem;
+  padding-block: 0.5rem;
   font-family: var(--lato);
   font-weight: 400;
   color: white;
