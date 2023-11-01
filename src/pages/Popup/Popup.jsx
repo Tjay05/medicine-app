@@ -11,28 +11,35 @@ import Packs from "./PopupFields/Packs";
 import Tablets from "./PopupFields/Tablets";
 
 const Popup = () => {
-  const tosinToken = localStorage.getItem('user');
+  const tosinToken = localStorage.getItem("user");
   const token = JSON.parse(tosinToken);
-  
+
   const [loading, setLoading] = useState(false);
   const [loadNum, setLoadNum] = useState(0);
 
-  const { showPopup, setShowPopup, handleClick, handleTypeChange, quantity_type, setQuantity_type } = useContext(PopupContext);
+  const {
+    showPopup,
+    setShowPopup,
+    handleClick,
+    handleTypeChange,
+    quantity_type,
+    setQuantity_type,
+  } = useContext(PopupContext);
 
   // ALL FIELDS
-  const [name, setName] = useState('');
-  const [Reminder, setReminder] = useState('');
+  const [name, setName] = useState("");
+  const [Reminder, setReminder] = useState("");
   const [carton, setCarton] = useState(0);
   const [pack, setPack] = useState(0);
   const [card, setCard] = useState(0);
   const [tablet, setTablet] = useState(0);
   const [Total_pieces, setTotal_pieces] = useState(0);
-  const [weight, setWeight] = useState('');
+  const [weight, setWeight] = useState("");
   const [price, setPrice] = useState(0);
-  const [expiryDate, setExpiryDate] = useState('');
-  
+  const [expiryDate, setExpiryDate] = useState("");
+
   const location = useLocation();
-  const path = location.pathname.includes('/Animal-Medicine')
+  const path = location.pathname.includes("/Animal-Medicine");
 
   const handlePopupClose = () => {
     setShowPopup(false);
@@ -40,111 +47,214 @@ const Popup = () => {
   };
 
   const renderPopupContent = () => {
-    if (quantity_type === 'carton') {
+    if (quantity_type === "carton") {
       return (
-        <Carton name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} carton={carton} setCarton={setCarton} pack={pack} setPack={setPack} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
+        <Carton
+          name={name}
+          setName={setName}
+          Reminder={Reminder}
+          setReminder={setReminder}
+          carton={carton}
+          setCarton={setCarton}
+          pack={pack}
+          setPack={setPack}
+          card={card}
+          setCard={setCard}
+          tablet={tablet}
+          setTablet={setTablet}
+          Total_pieces={Total_pieces}
+          setTotal_pieces={setTotal_pieces}
+          weight={weight}
+          setWeight={setWeight}
+          price={price}
+          setPrice={setPrice}
+          expiryDate={expiryDate}
+          setExpiryDate={setExpiryDate}
+        />
       );
-    } else if (quantity_type === 'pack') {
+    } else if (quantity_type === "pack") {
       return (
-        <Packs name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} pack={pack} setPack={setPack} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
+        <Packs
+          name={name}
+          setName={setName}
+          Reminder={Reminder}
+          setReminder={setReminder}
+          pack={pack}
+          setPack={setPack}
+          card={card}
+          setCard={setCard}
+          tablet={tablet}
+          setTablet={setTablet}
+          Total_pieces={Total_pieces}
+          setTotal_pieces={setTotal_pieces}
+          weight={weight}
+          setWeight={setWeight}
+          price={price}
+          setPrice={setPrice}
+          expiryDate={expiryDate}
+          setExpiryDate={setExpiryDate}
+        />
       );
-    } else if (quantity_type === 'card') {
+    } else if (quantity_type === "card") {
       return (
-        <Cards name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} card={card} setCard={setCard} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
+        <Cards
+          name={name}
+          setName={setName}
+          Reminder={Reminder}
+          setReminder={setReminder}
+          card={card}
+          setCard={setCard}
+          tablet={tablet}
+          setTablet={setTablet}
+          Total_pieces={Total_pieces}
+          setTotal_pieces={setTotal_pieces}
+          weight={weight}
+          setWeight={setWeight}
+          price={price}
+          setPrice={setPrice}
+          expiryDate={expiryDate}
+          setExpiryDate={setExpiryDate}
+        />
       );
-    } else if (quantity_type === 'tablet') {
+    } else if (quantity_type === "tablet") {
       return (
-        <Tablets name={name} setName={setName} Reminder={Reminder} setReminder={setReminder} tablet={tablet} setTablet={setTablet} Total_pieces={Total_pieces} setTotal_pieces={setTotal_pieces} weight={weight} setWeight={setWeight} price={price} setPrice={setPrice} expiryDate={expiryDate} setExpiryDate={setExpiryDate} />
+        <Tablets
+          name={name}
+          setName={setName}
+          Reminder={Reminder}
+          setReminder={setReminder}
+          tablet={tablet}
+          setTablet={setTablet}
+          Total_pieces={Total_pieces}
+          setTotal_pieces={setTotal_pieces}
+          weight={weight}
+          setWeight={setWeight}
+          price={price}
+          setPrice={setPrice}
+          expiryDate={expiryDate}
+          setExpiryDate={setExpiryDate}
+        />
       );
     } else {
       return null;
     }
-  }
+  };
 
   const handleStockAdd = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       setLoadNum(40);
-      const response = await fetch('https://nvmri.onrender.com/user/add/drug', {
-        method: 'POST',
+      const response = await fetch("https://nvmri.onrender.com/user/add/drug", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token.token}`,
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token.token}`,
         },
         body: JSON.stringify({
           name,
           quantity_type,
           carton,
           Reminder,
-          pack: quantity_type === 'pack' ? pack : carton*pack,
-          card: quantity_type === 'card' ? card : quantity_type === 'pack' ? pack*card : carton*pack*card,
-          tablet: quantity_type === 'tablet' ? tablet : quantity_type === 'card' ? card*tablet : quantity_type === 'pack' ? pack*card*tablet : carton*pack*card*tablet,
-          Total_pieces: quantity_type === 'tablet' ? tablet : quantity_type === 'card' ? card*tablet : quantity_type === 'pack' ? pack*card*tablet : carton*pack*card*tablet,
+          pack: quantity_type === "pack" ? pack : carton * pack,
+          card:
+            quantity_type === "card"
+              ? card
+              : quantity_type === "pack"
+              ? pack * card
+              : carton * pack * card,
+          tablet:
+            quantity_type === "tablet"
+              ? tablet
+              : quantity_type === "card"
+              ? card * tablet
+              : quantity_type === "pack"
+              ? pack * card * tablet
+              : carton * pack * card * tablet,
+          Total_pieces:
+            quantity_type === "tablet"
+              ? tablet
+              : quantity_type === "card"
+              ? card * tablet
+              : quantity_type === "pack"
+              ? pack * card * tablet
+              : carton * pack * card * tablet,
           weight,
           price,
-          expiryDate
+          expiryDate,
         }),
       });
       setLoadNum(70);
-      const data = await response.json()
+      const data = await response.json();
       if (response.ok) {
         window.location.reload();
         setLoading(false);
       } else if (response.status === 401) {
         console.log(data);
         setLoading(false);
-        setLoadNum(100)
+        setLoadNum(100);
       } else if (response.status === 404) {
         console.log(data);
         setLoading(false);
-      }else{
-        console.log(data, 'could not add stock');
+      } else {
+        console.log(data, "could not add stock");
         setLoading(false);
       }
-    }
-    catch (error) {
-      console.log('Topins error', error);
+    } catch (error) {
+      console.log("Topins error", error);
       setLoading(false);
     }
-  }
+  };
 
-  return ( 
+  return (
     <>
-      {loading && <div className="overwrap">
-        <div className="stephLoader">
-          Loading
-          <div className="loadContainer">
-            <div className='blueLoader' style={{width: `${loadNum}%`}}></div>
-          </div>
-        </div>
-      </div>}
-      <button onClick={handleClick}>Add new</button>
-      { showPopup && (
-        <div className="popupForm">
-        <form>
-          <div className="popupFormHeader">
-            <div className="wrapper">
-            {!path &&(<h2>Human Medicine</h2>)}
-            {path &&(<h2>Animal Medicine</h2>)}
-              <GrClose onClick={handlePopupClose} size={30} className='closeIcon'/>
+      {loading && (
+        <div className="overwrap">
+          <div className="stephLoader">
+            Loading
+            <div className="loadContainer">
+              <div
+                className="blueLoader"
+                style={{ width: `${loadNum}%` }}
+              ></div>
             </div>
           </div>
-          <div className="formField wrapper">
-            <input 
-              type="text" placeholder='Name'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <div className="twoForms">
+        </div>
+      )}
+      <button onClick={handleClick}>Add new</button>
+      {showPopup && (
+        <div className="popupForm">
+          <form>
+            <div className="popupFormHeader">
+              <div className="wrapper">
+                {!path && <h2>Human Medicine</h2>}
+                {path && <h2>Animal Medicine</h2>}
+                <GrClose
+                  onClick={handlePopupClose}
+                  size={30}
+                  className="closeIcon"
+                />
+              </div>
+            </div>
+            <div className="formField wrapper">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <div className="twoForms">
                 {quantity_type ? (
-                  <>
-                    {renderPopupContent()}
-                  </>
+                  <>{renderPopupContent()}</>
                 ) : (
                   <div className="firstForm">
-                    <label htmlFor="type">Quantity Type</label><br />
-                    <select value={quantity_type} onChange={handleTypeChange} id="type">
+                    <label htmlFor="type">Quantity Type</label>
+                    <br />
+                    <select
+                      value={quantity_type}
+                      onChange={handleTypeChange}
+                      id="type"
+                    >
                       <option>Select Type</option>
                       <option value="carton">Carton</option>
                       <option value="pack">Packs</option>
@@ -153,15 +263,14 @@ const Popup = () => {
                     </select>
                   </div>
                 )}
+              </div>
+              <button onClick={handleStockAdd}>Done</button>
             </div>
-            <button onClick={handleStockAdd} >Done</button>
-          </div>
-        </form>
-      </div>
-      ) 
-      }
+          </form>
+        </div>
+      )}
     </>
   );
-}
- 
+};
+
 export default Popup;
