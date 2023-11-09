@@ -6,9 +6,9 @@ import { ClipLoader } from "react-spinners";
 import { HumanWrapContext } from "./HumanWrap";
 
 const AvailStock = () => {
-  const { isLoading, filteredData } = useContext(HumanWrapContext)
+  const { isLoading, filteredData } = useContext(HumanWrapContext);
 
-  return ( 
+  return (
     <>
       <div className="availableStock">
         <div className="stockHead">
@@ -20,34 +20,44 @@ const AvailStock = () => {
         </div>
         {isLoading ? (
           <div className="loaded">
-            <ClipLoader color="#007bff" className="loadImg" loading={isLoading} size={60}/>
+            <ClipLoader
+              color="#007bff"
+              className="loadImg"
+              loading={isLoading}
+              size={60}
+            />
           </div>
         ) : (
           <>
             {filteredData.length > 0 ? (
-              filteredData.map ((drug) => (
+              filteredData.map((drug) => (
                 <div className="stockDetails" key={drug._id}>
                   <p>{drug.name}</p>
                   <p>{drug.quantity_type}</p>
                   <p>
-                    {drug.quantity_type==='carton' ? drug.carton : drug.quantity_type==='pack' ? drug.pack : drug.quantity_type==='card' ? drug.card : drug.tablet}
+                    {drug.quantity_type === "carton"
+                      ? drug.carton
+                      : drug.quantity_type === "pack"
+                      ? drug.pack
+                      : drug.quantity_type === "card"
+                      ? drug.card
+                      : drug.tablet}
                   </p>
                   <p>₦ {drug.price}</p>
                   <div className="date">
                     <p>{drug.expiryDate}</p>
-                    <GrEdit/>
+                    <GrEdit />
                   </div>
                 </div>
-              )
-              )) : (
-                <p className="notFound">Drug not available!!!</p>
-              )
-            }
+              ))
+            ) : (
+              <p className="notFound">Drug not available!!!</p>
+            )}
           </>
         )}
       </div>
     </>
   );
-}
- 
+};
+
 export default AvailStock;
