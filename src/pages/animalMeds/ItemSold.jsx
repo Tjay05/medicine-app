@@ -1,5 +1,5 @@
 const ItemsSold = () => {
-  return ( 
+  return (
     <>
       <div className="availableStock">
         <div className="stockHead">
@@ -26,6 +26,6 @@ const ItemsSold = () => {
       </div>
     </>
   );
-}
- 
+};
+
 export default ItemsSold;
