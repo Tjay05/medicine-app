@@ -1,5 +1,5 @@
 const Expired = () => {
-  return ( 
+  return (
     <>
       <div className="availableStock">
         <div className="stockHead">
@@ -20,6 +20,6 @@ const Expired = () => {
       </div>
     </>
   );
-}
- 
+};
+
 export default Expired;
