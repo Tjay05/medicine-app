@@ -1,8 +1,8 @@
 // Pic Imports
-import { GrEdit } from 'react-icons/gr';
+import { GrEdit } from "react-icons/gr";
 
 const AvailableStock = () => {
-  return ( 
+  return (
     <>
       <div className="availableStock">
         <div className="stockHead">
@@ -19,7 +19,7 @@ const AvailableStock = () => {
           <p>#1000</p>
           <div className="date">
             <p>November 2022</p>
-            <GrEdit/>
+            <GrEdit />
           </div>
         </div>
         <div className="stockDetails">
@@ -29,12 +29,12 @@ const AvailableStock = () => {
           <p>#2000</p>
           <div className="date">
             <p>June 2022</p>
-            <GrEdit/>
+            <GrEdit />
           </div>
         </div>
       </div>
     </>
   );
-}
- 
+};
+
 export default AvailableStock;
