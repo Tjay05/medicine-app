@@ -1,5 +1,5 @@
 const ExpiredMeds = () => {
-  return ( 
+  return (
     <>
       <div className="availableStock">
         <div className="stockHead">
@@ -20,6 +20,6 @@ const ExpiredMeds = () => {
       </div>
     </>
   );
-}
- 
+};
+
 export default ExpiredMeds;
