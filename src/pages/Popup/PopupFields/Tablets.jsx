@@ -6,7 +6,6 @@ const Tablets = ({
   setReminder,
   tablet,
   setTablet,
-  Total_pieces,
   setTotal_pieces,
   weight,
   setWeight,
